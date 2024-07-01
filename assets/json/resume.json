@@ -45,20 +45,7 @@
     }
   ],
   "certificates": "",
-  "publications": [
-    {
-      "author"    = "Anar Nurizada and Anurag Purwar",
-      "journal"   = "ASME Journal of Computing and Information Science in Engineering",
-      "title"     = "An Invariant Representation of Coupler Curves Using a Variational AutoEncoder: Application to Path Synthesis of Four-Bar Mechanisms",
-      "year"      = "2023",
-      "month"     = "oct",
-      "number"    = "1",
-      "volume"    = "24",
-      "doi"       = "10.1115/1.4063726",
-      "publisher" = "ASME International",
-      "timestamp" = "2023-12-31",
-},
-  ],
+  "publications": "",
   "skills": [
     {
       "name": "Physics",
