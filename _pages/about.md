@@ -10,7 +10,6 @@ profile:
   image_circular: false # crops the image to make it circular
   more_info: >
     <p>585 204 7937</p>
-    <p>631 304 0554</p>
     <p>Staten Island, NY 10309</p>
 
 news: false # includes a list of news items
