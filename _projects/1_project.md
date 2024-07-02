@@ -1,8 +1,8 @@
 ---
 layout: page
 title: Transforming Local Payments - Our Hackathon Journey
-description: with background image
 importance: 1
+description: blank
 category: work
 related_publications: false
 ---
@@ -39,7 +39,7 @@ Throughout this hackathon, our team was driven by the goal of creating solutions
     </div>
 </div>
 <div class="caption">
-    This image can also have a caption. It's like magic.
+    An image featuring myself with team members, organizers, and mentors.
 </div>
 
 <div class="row">
@@ -48,5 +48,5 @@ Throughout this hackathon, our team was driven by the goal of creating solutions
     </div>
 </div>
 <div class="caption">
-    This image can also have a caption. It's like magic.
+    All the winners together with organizers and mentors.
 </div>
