@@ -20,13 +20,13 @@
       year: 2020 - 2020
       description:
         - GPA: 3.86
-    - title: B.S. in MechE
+  - title: B.S. in MechE
       institution: Stony Brook University, NY, USA
       year: 2016 - 2019
       description:
         - GPA: 3.81
         
-    - title: Experience
+  - title: Experience
       type: time_table
       contents:
     - title: Graduate Research Assistant
