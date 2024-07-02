@@ -22,4 +22,3 @@ This project not only refined my technical skills but also imparted invaluable l
 <div class="caption">
     A minute long video showcasing our robots.
 </div>
-
