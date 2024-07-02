@@ -101,9 +101,7 @@ giscus:
   emit_metadata: 0
   lang: en
 disqus_shortname: null
-external_sources:
-  - name: medium.com
-    rss_url: "https://medium.com/@anar.nurizada_44852"
+external_sources: null
 collections:
   projects:
     output: true
