@@ -2,7 +2,6 @@
 layout: page
 title: Transforming Local Payments - Our Hackathon Journey
 importance: 1
-description: blank
 category: work
 related_publications: false
 ---
