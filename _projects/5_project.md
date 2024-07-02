@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Generating Diverse Planar Four-Bar Mechanisms with Conditional beta-VAE
+title: Freshman Robotics Project
 importance: 1
 category: work
 related_publications: false
@@ -16,7 +16,7 @@ This project not only refined my technical skills but also imparted invaluable l
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        {% include video.liquid path="https://www.youtube.com/watch?v=bq11natCBS0&ab_channel=LeonYang" class="img-fluid rounded z-depth-1" %}
+        {% include video.liquid path="assets/video/MEC101.mp4" class="img-fluid rounded z-depth-1" controls=true autoplay=true %}
     </div>
 </div>
 <div class="caption">
