@@ -50,7 +50,7 @@ Throughout this hackathon, our team was driven by the goal of creating solutions
     All the winners together with organizers and mentors.
 </div>
 
-<div class="row">
+<div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
         {% include video.liquid path="assets/video/orig.MOV" class="img-fluid rounded z-depth-1" controls=true autoplay=true %}
     </div>
