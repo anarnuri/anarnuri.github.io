@@ -53,7 +53,7 @@ Throughout this hackathon, our team was driven by the goal of creating solutions
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include video.liquid path="assets/video/orig.mov" title="Our Video" %}
+        {% include figure.liquid path="assets/video/orig.MOV" title="Our Video" %}
     </div>
 </div>
 <div class="caption">
