@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://anarnuri.github.ioblank/sitemap.xml
+Sitemap: https://anarnuri.github.io/sitemap.xml
