@@ -4,72 +4,104 @@
     - name: Full Name
       value: Anar Nurizada
     - name: Languages
-      value: English, Russian, Azerbaijani
-
+      value: 'English, Russian, Azerbaijani'
 - title: Education
   type: time_table
   contents:
     - title: PhD Candidate
-      institution: Stony Brook University, NY, USA
+      institution: 'Stony Brook University, NY, USA'
       year: 2021 - present
       description:
-        - Majoring in Mechanical Engineering, minor in CompSci
+        - 'Majoring in Mechanical Engineering, minor in CompSci'
         - GPA: 3.71
     - title: M.S. in MechE
-      institution: Stony Brook University, NY, USA
+      institution: 'Stony Brook University, NY, USA'
       year: 2020 - 2020
       description:
         - GPA: 3.86
-  - title: B.S. in MechE
-      institution: Stony Brook University, NY, USA
+    - title: B.S. in MechE
+      institution: 'Stony Brook University, NY, USA'
       year: 2016 - 2019
       description:
         - GPA: 3.81
-        
-  - title: Experience
-      type: time_table
-      contents:
+- title: Experience
+  type: time_table
+  contents:
     - title: Graduate Research Assistant
       institution: Stony Brook University
       year: Sep 2020 - Present
       description:
         - Designed four multi-modal generative models for path synthesis in mechanical engineering:
-          - Transformer-based model with LLaMa2 features and MLP for mechanism type prediction.
-          - Conditional beta VAE with cross-attention mechanisms, integrated conditions, and Classifier Free Guidance.
-          - Conditional graph-VAE model with Classifier Free Guidance.
-          - Image-based VAE and MLP for mapping between latent space and mechanism representation.
-        - Implemented object detection algorithms and post-processing techniques for sketch conversion by fine-tuning YOLOv4.
-        - Led end-to-end research projects, including dataset creation, data preprocessing, model validation, and augmentation.
-        - Demonstrated deep expertise in neural network architectures, loss functions, and data manipulation tools including PyTorch (Lightning), NumPy, SciPy, Matplotlib, and scikit-learn.
-        - Managed dataset updates via Kaggle and utilized online GPU services (Lambda, VAST.AI). Worked with Linux, CUDA and presented work at annual ASME conferences in 2021 - 2023.
-
+            - >-
+              Transformer-based model with LLaMa2 features and MLP for mechanism
+              type prediction.
+            - >-
+              Conditional beta VAE with cross-attention mechanisms, integrated
+              conditions, and Classifier Free Guidance.
+            - Conditional graph-VAE model with Classifier Free Guidance.
+            - >-
+              Image-based VAE and MLP for mapping between latent space and
+              mechanism representation.
+        - >-
+          Implemented object detection algorithms and post-processing techniques
+          for sketch conversion by fine-tuning YOLOv4.
+        - >-
+          Led end-to-end research projects, including dataset creation, data
+          preprocessing, model validation, and augmentation.
+        - >-
+          Demonstrated deep expertise in neural network architectures, loss
+          functions, and data manipulation tools including PyTorch (Lightning),
+          NumPy, SciPy, Matplotlib, and scikit-learn.
+        - >-
+          Managed dataset updates via Kaggle and utilized online GPU services
+          (Lambda, VAST.AI). Worked with Linux, CUDA and presented work at
+          annual ASME conferences in 2021 - 2023.
     - title: Mechanical Engineer Intern
       institution: Flower Turbines LLC
       year: Oct 2019 - Dec 2020
       description:
-        - Modeled wind turbines' interactions with rooftops through advanced simulations, enhancing reliability and performance.
-        - Conducted comprehensive cost-benefit analysis for data-driven project profitability and sustainability decisions.
-        - Validated structural integrity of designs with rigorous wind load simulations using Ansys.
-        - Designed novel rooftop installations for wind turbines with Autodesk Inventor CAD.
-
+        - >-
+          Modeled wind turbines' interactions with rooftops through advanced
+          simulations, enhancing reliability and performance.
+        - >-
+          Conducted comprehensive cost-benefit analysis for data-driven project
+          profitability and sustainability decisions.
+        - >-
+          Validated structural integrity of designs with rigorous wind load
+          simulations using Ansys.
+        - >-
+          Designed novel rooftop installations for wind turbines with Autodesk
+          Inventor CAD.
     - title: Summer Mechanical Engineer Intern
       institution: BP
       year: Jun 2019 - Sep 2019
       description:
-        - Supported onshore operations for seamless project execution with contractors.
-        - Expert in materials management, coordination, and standards compliance.
-        - Oversaw valve sizing, certification, and repairs to enhance efficiency and safety.
-        - Led piping design and stress analysis to optimize installations and improve structural integrity.
-
+        - >-
+          Supported onshore operations for seamless project execution with
+          contractors.
+        - >-
+          Expert in materials management, coordination, and standards
+          compliance.
+        - >-
+          Oversaw valve sizing, certification, and repairs to enhance efficiency
+          and safety.
+        - >-
+          Led piping design and stress analysis to optimize installations and
+          improve structural integrity.
     - title: Undergraduate Research Assistant
       institution: Stony Brook University
       year: Sep 2018 - May 2020
       description:
-        - Explored 3D printed part anisotropy with size effect methods, enhancing materials science research.
+        - >-
+          Explored 3D printed part anisotropy with size effect methods,
+          enhancing materials science research.
         - Created accurate test specimens via advanced 3D printing and modeling.
-        - Performed detailed 3-point bending tests using Instron equipment and analyzed data.
-        - Skilled in piping design, stress analysis, and optimizing installations for better performance and integrity.
-
+        - >-
+          Performed detailed 3-point bending tests using Instron equipment and
+          analyzed data.
+        - >-
+          Skilled in piping design, stress analysis, and optimizing
+          installations for better performance and integrity.
 - title: Honors and Awards
   type: time_table
   contents:
