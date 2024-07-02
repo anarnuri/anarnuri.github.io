@@ -86,7 +86,7 @@ blog_description: null
 permalink: null
 lsi: null
 pagination:
-  enabled: true
+  enabled: false
 related_blog_posts: null
 giscus:
   repo: null
