@@ -5,3 +5,5 @@ repo_description_lines_max: 2
 
 github_repos:
   - anarnuri/vae_project
+  - anarnuri/vqvae
+  - anarnuri/RRRR-RRRP-RRPR-cVAE
