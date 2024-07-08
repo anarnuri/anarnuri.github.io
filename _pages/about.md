@@ -16,8 +16,6 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
-Based on your resume and the introduction you've drafted, here's a revised version for the welcoming page of your personal website:
-
 Welcome to my personal website!
 
 I hold both a Bachelor's and Master's degree in Mechanical Engineering from Stony Brook University. My journey as a mechanical engineer began with internships at Flower Turbines, Chem3, and BP, where I gained hands-on experience in the field. However, it was during my graduate studies that I discovered my true passion—Machine Learning.
