@@ -8,6 +8,7 @@ profile:
   image: prof_pic.jpeg
   image_circular: false # crops the image to make it circular
   more_info: >
+    <p> PhD Candidate, Generative AI</p> 
     <p>+1 585 204 7937</p>
     <p>Staten Island, NY 10309</p>
 
