@@ -39,7 +39,16 @@ Thanks to our unique algorithm and clear understanding of local needs, we were a
 
 #### Presentation (PPTX)
 
-You can download our project presentation [here](assets/presentations/hackathon-presentation.pptx).
+You can download see project presentation:
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        <iframe src="{{ '/assets/presentations/hackathon-presentation.pdf' | relative_url }}" class="img-fluid rounded z-depth-1" style="width:100%; height:600px;" frameborder="0"></iframe>
+    </div>
+</div>
+<div class="caption">
+    Our project presentation explaining the approach and solution in detail.
+</div>
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
