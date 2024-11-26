@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Path Generative Model Based on Conditional β-Variational Autoencoder for Four-Bar Mechanism Design
-importance: 1
+importance: 2
 category: Projects
 related_publications: false
 ---
