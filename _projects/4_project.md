@@ -111,16 +111,3 @@ This paper presents a detailed analysis of the fracturing behavior of 3D printed
 ## Conclusion
 
 This work demonstrates that 3D printing induces significant anisotropy and quasibrittleness in the fracture behavior of ABS parts. The findings underscore the importance of accounting for these effects in design processes to ensure reliability and performance.
-
----
-
-## Figures and Visualizations
-
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include pdf.liquid path="assets/presentations/anisotropy-fracture-behavior.pdf" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    Detailed analysis of anisotropic fracturing behavior using the size effect method.
-</div>
