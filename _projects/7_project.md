@@ -15,7 +15,6 @@ related_publications: false
     Overview: the training phase and inference phase steps are bounded by green dash-dot lines and red dashed lines, respectively.
 </div>
 
-
 ## Overview
 
 This paper introduces a groundbreaking dataset containing nearly 3 million single-degree-of-freedom planar mechanisms, encompassing 4-bar, 6-bar, and 8-bar linkage mechanisms with both open and closed coupler curves. The study addresses a critical gap in the field of machine learning-driven path synthesis by presenting the first comprehensive dataset of this magnitude and diversity.
@@ -29,17 +28,21 @@ By offering a standardized evaluation framework with six key metrics — accurac
 ## Key Contributions
 
 1. **Comprehensive Dataset**:
+
    - Includes 4-bar mechanisms with revolute and prismatic joints and higher-order mechanisms (6-bar and 8-bar).
    - Encompasses open and closed curves, filling gaps in prior datasets like LINKS.
 
 2. **Standardized Metrics**:
+
    - Proposes six evaluation metrics to objectively compare machine learning approaches in mechanism design.
 
 3. **Innovative Methodology**:
+
    - Demonstrates the potential of VAEs to represent and synthesize diverse coupler curves.
    - Introduces latent space exploration to generate diverse solutions for a given input curve.
 
 4. **Evaluation of Latent Space**:
+
    - Explores optimal latent dimensions for VAE models, concluding that a 10-dimensional latent space balances performance and efficiency.
 
 5. **Real-World Applications**:
@@ -58,10 +61,12 @@ By offering a standardized evaluation framework with six key metrics — accurac
 ## Methodology
 
 1. **Dataset Generation**:
+
    - Uses a simulation algorithm capable of handling revolute and prismatic joints.
    - Mechanism filtering ensures practical designs by limiting extreme link ratios and joint overlaps.
 
 2. **Variational Autoencoders**:
+
    - Trained on coupler curves embedded as 64x64 pixel images.
    - Maps curves to a latent space, enabling efficient retrieval of similar mechanisms.
 
@@ -83,6 +88,7 @@ By offering a standardized evaluation framework with six key metrics — accurac
 ## Future Directions
 
 The study highlights potential expansions, including:
+
 - Extending the dataset to include higher-order mechanisms (spherical and spatial).
 - Integrating conditional VAEs to allow user-defined mechanism constraints.
 - Adapting the approach to more complex motion generation problems.

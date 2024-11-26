@@ -17,14 +17,17 @@ This paper introduces a novel methodology for the design of planar four-bar mech
 ## Key Contributions
 
 1. **Innovative Neural Network Architecture**:
+
    - Incorporates cross-attention and self-attention layers for enhanced performance.
    - Introduces a unified representation for different four-bar mechanism types.
 
 2. **Extensive Dataset**:
+
    - Includes RRRR, RRRP, and RRPR mechanism types with open and closed coupler curves.
    - Normalized for translation, rotation, and scale invariance.
 
 3. **Metrics for Evaluation**:
+
    - Proposes hierarchical metrics to assess reconstruction quality, novelty, and diversity.
 
 4. **Generative Capabilities**:
@@ -48,7 +51,6 @@ This paper introduces a novel methodology for the design of planar four-bar mech
    figure.
 </div>
 
-
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
         {% include figure.liquid loading="eager" path="assets/img/beta_2.png" title="Overview of cβ-VAE Model" class="img-fluid rounded z-depth-1" %}
@@ -63,10 +65,12 @@ This paper introduces a novel methodology for the design of planar four-bar mech
 ## Methodology
 
 - **Model Architecture**:
+
   - Utilizes a cβ-VAE with cross-attention for condition integration and self-attention for mechanism prediction.
   - Combines latent vector representations with user-specified conditions.
 
 - **Dataset**:
+
   - Comprises over 4 million mechanisms across three types (RRRR, RRRP, RRPR).
   - Each mechanism is represented as joint coordinates and a corresponding coupler curve.
 
@@ -79,10 +83,12 @@ This paper introduces a novel methodology for the design of planar four-bar mech
 ## Results and Insights
 
 1. **Reconstruction Quality**:
+
    - Dynamic Time Warping (DTW) was used to evaluate the similarity between input and generated coupler curves.
    - Best results achieved with β = 25, balancing accuracy and diversity.
 
 2. **Novelty and Diversity**:
+
    - Novelty assessed using L2 norms between generated mechanisms.
    - Diversity ensured by evaluating the representation of all mechanism types in the results.
 
