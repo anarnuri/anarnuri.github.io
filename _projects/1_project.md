@@ -2,7 +2,7 @@
 layout: page
 title: Winning Hackathon Journey
 importance: 1
-category: work
+category: Projects
 related_publications: false
 ---
 

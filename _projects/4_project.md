@@ -2,7 +2,7 @@
 layout: page
 title: Generating Diverse Planar Four-Bar Mechanisms with Conditional beta-VAE
 importance: 1
-category: work
+category: Projects
 related_publications: false
 ---
 

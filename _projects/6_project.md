@@ -2,7 +2,7 @@
 layout: page
 title: Carpooling App for Rush Hour - Hackathon Project
 importance: 1
-category: work
+category: Projects
 related_publications: false
 ---
 

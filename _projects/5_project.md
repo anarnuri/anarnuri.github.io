@@ -2,7 +2,7 @@
 layout: page
 title: Freshman Robotics Project
 importance: 1
-category: work
+category: Projects
 related_publications: false
 ---
 

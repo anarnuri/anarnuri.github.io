@@ -2,7 +2,7 @@
 layout: page
 title: A Dataset of 3M Single-DOF Planar 4-, 6-, and 8-Bar Linkage Mechanisms With Open and Closed Coupler Curves for Machine Learning-Driven Path Synthesis
 importance: 1
-category: work
+category: Projects
 related_publications: false
 ---
 
