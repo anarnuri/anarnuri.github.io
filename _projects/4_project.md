@@ -39,7 +39,7 @@ This paper presents a detailed analysis of the fracturing behavior of 3D printed
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid path="assets/images/specimen-geometry.jpg" title="SENB Specimen Geometry" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid path="assets/img/specimen-geometry.jpg" title="SENB Specimen Geometry" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
@@ -64,7 +64,7 @@ This paper presents a detailed analysis of the fracturing behavior of 3D printed
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid path="assets/images/fracture-toughness.jpg" title="Fracture Toughness vs. Orientation" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid path="assets/img/fracture-toughness.jpg" title="Fracture Toughness vs. Orientation" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
@@ -77,7 +77,7 @@ This paper presents a detailed analysis of the fracturing behavior of 3D printed
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid path="assets/images/fpz-analysis.jpg" title="Fracture Process Zone Analysis" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid path="assets/img/fpz-analysis.jpg" title="Fracture Process Zone Analysis" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
@@ -90,7 +90,7 @@ This paper presents a detailed analysis of the fracturing behavior of 3D printed
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid path="assets/images/size-effect-law.jpg" title="Size Effect Law Validation" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid path="assets/img/size-effect-law.jpg" title="Size Effect Law Validation" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
