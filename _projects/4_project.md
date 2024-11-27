@@ -3,7 +3,7 @@ layout: page
 title: Induced Anisotropy in the Fracturing Behavior of 3D Printed Parts Analyzed by the Size Effect Method
 importance: 2
 category: Projects
-related_publications: true
+related_publications: false
 ---
 
 ## Overview
