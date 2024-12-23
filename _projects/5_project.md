@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Freshman Robotics Project
-importance: 1
+importance: 2
 category: Projects
 related_publications: false
 ---

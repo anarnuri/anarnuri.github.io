@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Interactive Digital Transformation and Simulation of n-Bar Planar Linkages using Deep Neural Networks
-importance: 2
+importance: 3
 category: Projects
 related_publications: false
 ---
