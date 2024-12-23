@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Dual-Decoder LLaMa Transformer for Mechanism Synthesis Using Coupler Curve Images
+title: Automating data generation using myCobot 280 PI
 importance: 1
 category: Projects
 related_publications: false
@@ -12,7 +12,7 @@ related_publications: false
     </div>
 </div>
 <div class="caption">
-    The **myCobot 280 PI robotic arm** automates the dataset creation process by mimicking human hand movements. Equipped with cameras, the arm captures images of labels attached to two motorized label rewinders. These rewinders simulate real-world motion by dragging and rewinding labels as the robotic arm adjusts its camera angles and positions. This setup not only reduces manual effort but also ensures consistency and efficiency in dataset generation for object detection tasks.
+    The myCobot 280 PI robotic arm automates the dataset creation process by mimicking human hand movements. Equipped with cameras, the arm captures images of labels attached to two motorized label rewinders. These rewinders simulate real-world motion by dragging and rewinding labels as the robotic arm adjusts its camera angles and positions. This setup not only reduces manual effort but also ensures consistency and efficiency in dataset generation for object detection tasks.
 </div>
 
 # Automated Dataset Generation and Object Detection Optimization with myCobot 280 PI
