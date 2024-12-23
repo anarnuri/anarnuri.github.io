@@ -1,4 +1,3 @@
-
 ---
 layout: page
 title: Dual-Decoder LLaMa Transformer for Mechanism Synthesis Using Coupler Curve Images
@@ -41,15 +40,18 @@ Machine learning offers an innovative alternative to traditional methods, enabli
 ## Key Contributions
 
 1. **Mechanism Type Conditioning**:
+
    - Introduces a dedicated embedding layer for mechanism types, enabling the model to generate designs specific to the input type.
 
 2. **Dual-Decoder Architecture**:
+
    - Employs two independent decoders:
      - The **first decoder** predicts the first set of joint coordinates.
      - The **second decoder** predicts the second set of joint coordinates.
    - This modular design improves performance for complex mechanisms.
 
 3. **Advanced Loss Masking**:
+
    - Implements a masked Mean Squared Error (MSE) loss to handle variable-length sequences and padding tokens.
 
 4. **Efficiency and Scalability**:
@@ -91,6 +93,7 @@ A major breakthrough came with the introduction of two independent decoders. Thi
 ### Input Representation
 
 1. **Coupler Curves as Images**:
+
    - Each trajectory is represented as a 2D grayscale image, divided into patches of fixed size.
    - A convolutional layer extracts features from these patches, which are embedded into a fixed-dimensional vector.
 
@@ -101,10 +104,12 @@ A major breakthrough came with the introduction of two independent decoders. Thi
 ### Model Architecture
 
 1. **Transformer Encoder**:
+
    - Processes the embedded input sequence (coupler curve patches + mechanism type embedding).
    - Captures spatial relationships and encodes them into a latent representation.
 
 2. **Dual Decoders**:
+
    - Each decoder independently predicts one part of the mechanism (first and second sets of joint coordinates).
    - Cross-attention layers allow the decoders to leverage information from the encoder's latent representation.
 
@@ -114,7 +119,9 @@ A major breakthrough came with the introduction of two independent decoders. Thi
 ### Training Process
 
 1. **Masked MSE Loss**:
+
    - Handles variable-length sequences by masking padding tokens during loss computation.
+
    ```python
    def mse_loss(predictions, targets, mask_value=0.5):
        mask = ~(targets == mask_value).all(dim=-1)
@@ -126,6 +133,7 @@ A major breakthrough came with the introduction of two independent decoders. Thi
    ```
 
 2. **Optimization**:
+
    - The model is trained using the Adam optimizer with a learning rate scheduler.
 
 3. **Dynamic Causal Masking**:
@@ -138,15 +146,18 @@ A major breakthrough came with the introduction of two independent decoders. Thi
 During inference, the model generates mechanism designs using a conditional greedy decoding approach:
 
 1. **Encoding**:
+
    - The coupler curve image is encoded along with the mechanism type embedding.
 
 2. **Decoding**:
+
    - Each decoder independently predicts its part of the mechanism, conditioned on the encoder's latent representation.
 
 3. **Stopping Condition**:
    - Decoding halts when an End-of-Sequence (EOS) token is detected.
 
 ### Code Highlights for Inference
+
 ```python
 def greedy_decode_conditional(model, source, mech_type, max_len, eos_token=torch.tensor([1.0, 1.0])):
     encoder_output = model.encode(source, None, mech_type)
@@ -165,9 +176,11 @@ def greedy_decode_conditional(model, source, mech_type, max_len, eos_token=torch
 ## Applications
 
 1. **Robotics**:
+
    - Generates diverse designs for robotic mechanisms, such as arms and grippers.
 
 2. **Industrial Design**:
+
    - Facilitates rapid prototyping of mechanisms for manufacturing.
 
 3. **Education**:
@@ -178,12 +191,15 @@ def greedy_decode_conditional(model, source, mech_type, max_len, eos_token=torch
 ## Future Directions
 
 1. **Intra-Type Diversity**:
+
    - Extend the model to generate multiple mechanisms within the same type.
 
 2. **Scalability**:
+
    - Adapt the architecture to handle mechanisms with more joints and higher complexities.
 
 3. **Optimization Frameworks**:
+
    - Integrate the model with optimization algorithms for real-time design applications.
 
 4. **Explainability**:
