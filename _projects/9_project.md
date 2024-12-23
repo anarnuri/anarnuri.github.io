@@ -204,7 +204,3 @@ def greedy_decode_conditional(model, source, mech_type, max_len, eos_token=torch
 
 4. **Explainability**:
    - Develop visualizations to interpret the model’s attention mechanisms and latent space.
-
----
-
-[**Access the Full Code on GitHub**](https://github.com/anarnuri/path_generation_transformer)
