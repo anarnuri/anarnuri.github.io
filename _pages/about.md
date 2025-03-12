@@ -18,6 +18,7 @@ social: true # includes social icons at the bottom of the page
 ---
 
 # Welcome to My Personal Website!
+
 I’m **Anar**, a mechanical engineer turned machine learning enthusiast, with both Bachelor's and Master's degrees in Mechanical Engineering from Stony Brook University. My journey in mechanical engineering started with hands-on internships at places like Flower Turbines, Chem3, and BP, but I discovered my real passion during grad school — **Machine Learning!** A project where I fine-tuned YOLOv4 to detect objects in a bar mechanism sketch sparked this shift, evolving from a simple task into an interactive tool and eventually leading to an exciting publication.
 
 Currently, I’m a Ph.D. candidate and **Graduate Research Assistant** at Stony Brook, where my research focuses on designing innovative **multi-modal generative models** to push boundaries in mechanical engineering. I build my models from scratch, defining their architectures, custom loss functions, and training strategies. I’ve developed and deployed multiple models for path synthesis in mechanism design, which you can check out on [MotionGen](https://motiongen.io). These models include:
@@ -32,9 +33,9 @@ One of my most significant contributions is the development of a **Dual-Decoder 
 
 To accelerate my model training, I leverage **PyTorch** and **High-Performance Computing (HPC)**, enabling me to train large-scale generative models efficiently.
 
-In addition to my research, I work as a **Machine Learning Engineer at Zortag**, where I’m responsible for programming and automating the **myCobot 280 PI** robotic arm to capture images for dataset creation, significantly reducing manual effort by simulating human-like motion. I also fine-tune object detection models (like YOLOv8), improving detection accuracy and optimizing the data labeling pipeline.  
+In addition to my research, I work as a **Machine Learning Engineer at Zortag**, where I’m responsible for programming and automating the **myCobot 280 PI** robotic arm to capture images for dataset creation, significantly reducing manual effort by simulating human-like motion. I also fine-tune object detection models (like YOLOv8), improving detection accuracy and optimizing the data labeling pipeline.
 
-Recently, I **developed an iPhone app** that allows my trained models to be deployed and inferenced on mobile devices. My model is **extremely fast**, running **in almost real-time**, making it highly efficient for practical applications where speed and accuracy are critical. This has significantly improved the feasibility of real-world deployment, allowing for **instant QR code verification** and **real-time object detection**.  
+Recently, I **developed an iPhone app** that allows my trained models to be deployed and inferenced on mobile devices. My model is **extremely fast**, running **in almost real-time**, making it highly efficient for practical applications where speed and accuracy are critical. This has significantly improved the feasibility of real-world deployment, allowing for **instant QR code verification** and **real-time object detection**.
 
 [Learn more about this project here.](https://anarnuri.github.io/projects/10_project)
 
