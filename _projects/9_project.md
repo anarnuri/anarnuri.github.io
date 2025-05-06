@@ -38,12 +38,15 @@ This model treats the mechanism as a sequence of tokens, where each token repres
 ## Key Enhancements
 
 1. **RMSNorm for Stability**:
+
    - The model replaces standard LayerNorm with **RMSNorm**, which normalizes inputs based on their root mean square. This improves training stability and convergence speed.
 
 2. **SwiGLU-inspired FeedForwardBlock**:
+
    - The feedforward block incorporates a **Swish-Gated Linear Unit (SwiGLU)** style mechanism: two parallel linear projections, where one is passed through a SiLU (swish) activation and multiplied element-wise with the other. This gating mechanism boosts expressiveness and non-linearity.
 
 3. **Modular Attention Mechanism**:
+
    - The attention layers now include **dynamic masking** capabilities, ensuring flexible handling of variable-length sequences and proper autoregressive decoding when needed.
 
 4. **Mixture of Experts (MoE) Integration**:
@@ -51,10 +54,12 @@ This model treats the mechanism as a sequence of tokens, where each token repres
    - A MoE layer is included within the Transformer blocks to dynamically route information through multiple expert networks. This enables the model to specialize different parts of the network for various mechanism types and complexities, improving both flexibility and performance.
 
 5. **Enhanced Input Processing**:
+
    - **Input Embeddings**: Raw coupler curve images are patch-embedded using a linear projection and scaled by the square root of the model’s dimensionality.
    - **Positional Encoding**: Sinusoidal positional encodings are precomputed and added to the embeddings, preserving sequence order.
 
 6. **Better Initialization**:
+
    - All linear layers are initialized with **Xavier uniform initialization**, promoting stable gradient flow from the start of training.
 
 7. **Clean Modular Design**:
@@ -98,15 +103,15 @@ We began with a single-decoder Transformer adapted from NLP, but it quickly hit 
 - **Loss Function**:  
   Masked MSE loss handles padding efficiently:
 
-   ```python
-   def mse_loss(predictions, targets, mask_value=0.5):
-       mask = ~(targets == mask_value).all(dim=-1)
-       mask = mask.unsqueeze(-1).expand_as(predictions)
-       masked_predictions = predictions[mask]
-       masked_targets = targets[mask]
-       loss = F.mse_loss(masked_predictions, masked_targets, reduction="mean")
-       return loss
-   ```
+  ```python
+  def mse_loss(predictions, targets, mask_value=0.5):
+      mask = ~(targets == mask_value).all(dim=-1)
+      mask = mask.unsqueeze(-1).expand_as(predictions)
+      masked_predictions = predictions[mask]
+      masked_targets = targets[mask]
+      loss = F.mse_loss(masked_predictions, masked_targets, reduction="mean")
+      return loss
+  ```
 
 2. **Optimization**:
 
