@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Dual-Decoder LLaMa Transformer for Mechanism Synthesis Using Coupler Curve Images
+title: Mechformer. A Dual-Decoder Transformer with RMSNorm and SwiGLU for Mechanism Synthesis
 importance: 1
 category: Projects
 related_publications: false
@@ -12,115 +12,91 @@ related_publications: false
     </div>
 </div>
 <div class="caption">
-    Overview: The double-decoder Transformer model processes input coupler curves and mechanism type embeddings, enabling the generation of diverse mechanisms. The encoder captures the spatial features, while the dual decoders independently predict joint coordinates for mechanism synthesis.
+    Overview: The enhanced double-decoder Transformer model processes coupler curve images and mechanism type embeddings to generate diverse mechanism designs. The encoder captures spatial features, while the dual decoders predict joint coordinates, leveraging improved normalization, gating mechanisms, and robust attention modules.
 </div>
 
 [**Access the Full Code on GitHub**](https://github.com/anarnuri/path_generation_transformer)
 
 ## Overview
 
-Designing mechanisms capable of following specific trajectories, known as coupler curves, is a core challenge in mechanical engineering and robotics. Mechanisms are essential in applications ranging from robotic arms to automated manufacturing processes. However, traditional methods for mechanism synthesis rely heavily on analytical techniques, which are:
+Designing mechanisms that accurately follow complex trajectories (coupler curves) remains a foundational challenge in mechanical design and robotics. Traditional synthesis methods rely on solving analytical equations, which are:
 
-1. **Time-Consuming**: Solving complex equations for mechanism synthesis is computationally expensive, especially for higher-order mechanisms.
-2. **Single-Solution Oriented**: These methods typically provide only one mechanism design for a given coupler curve.
-3. **Limited in Complexity**: Analytical approaches struggle with mechanisms that have a large number of joints or require intricate trajectories.
+1. **Computationally Intensive**: Especially for higher-order mechanisms with many joints.
+2. **Single-Result Oriented**: Typically offering just one valid mechanism per coupler curve.
+3. **Limited Flexibility**: Struggle to generalize to mechanisms with complex or novel configurations.
 
 ### Motivation for a Machine Learning Approach
 
-Machine learning offers an innovative alternative to traditional methods, enabling faster and more diverse solutions. By leveraging data-driven models, engineers can explore a wider range of mechanism designs and automate the synthesis process. This project introduces a **Dual-Decoder Transformer** model, designed specifically for mechanism synthesis. Key innovations include:
+This project introduces a **Dual-Decoder Transformer** model that reimagines the synthesis pipeline. By leveraging deep learning, we can automate the generation of diverse and complex mechanisms, speeding up design iterations and broadening the search space. Key features of the model include:
 
-- **Coupler Curves as Images**: Input trajectories are represented as grayscale images, enabling the use of convolutional layers for spatial feature extraction.
-- **Mechanism Type Embeddings**: Each mechanism type is encoded as a unique feature vector to condition the model's output.
-- **Joint Coordinates as Output**: Mechanisms are represented as Cartesian coordinates of their joints, split into two independent parts for simplified learning.
+- **Coupler Curves as Images**: Trajectories are input as grayscale images, allowing the encoder to extract spatial features effectively.
+- **Mechanism Type Conditioning**: Each mechanism type is embedded into a feature vector, enabling the model to tailor its outputs accordingly.
+- **Coordinate Prediction**: Mechanisms are represented by Cartesian coordinates of joints, split into two independently predicted parts for clarity and control.
 
-[**Access the Full Code on GitHub**](https://github.com/anarnuri/path_generation_transformer)
+This model treats the mechanism as a sequence of tokens, where each token represents a joint in the mechanism. This tokenization approach allows the model to easily scale to mechanisms with a higher number of joints. Currently, the model can handle up to 20 joints, and its architecture is designed to accommodate even larger mechanisms by adjusting token length and model capacity. The modularity of the design, with independent decoders for each set of joint coordinates, further enhances scalability. As the number of joints increases, the model’s performance remains consistent, making it suitable for mechanisms of varying complexity without significant modifications. This scalability makes it a flexible solution for future applications that may involve more intricate mechanism designs.
 
----
+## Key Enhancements
 
-## Key Contributions
+1. **RMSNorm for Stability**:
+   - The model replaces standard LayerNorm with **RMSNorm**, which normalizes inputs based on their root mean square. This improves training stability and convergence speed.
 
-1. **Mechanism Type Conditioning**:
+2. **SwiGLU-inspired FeedForwardBlock**:
+   - The feedforward block incorporates a **Swish-Gated Linear Unit (SwiGLU)** style mechanism: two parallel linear projections, where one is passed through a SiLU (swish) activation and multiplied element-wise with the other. This gating mechanism boosts expressiveness and non-linearity.
 
-   - Introduces a dedicated embedding layer for mechanism types, enabling the model to generate designs specific to the input type.
+3. **Modular Attention Mechanism**:
+   - The attention layers now include **dynamic masking** capabilities, ensuring flexible handling of variable-length sequences and proper autoregressive decoding when needed.
 
-2. **Dual-Decoder Architecture**:
+4. **Mixture of Experts (MoE) Integration**:
 
-   - Employs two independent decoders:
-     - The **first decoder** predicts the first set of joint coordinates.
-     - The **second decoder** predicts the second set of joint coordinates.
-   - This modular design improves performance for complex mechanisms.
+   - A MoE layer is included within the Transformer blocks to dynamically route information through multiple expert networks. This enables the model to specialize different parts of the network for various mechanism types and complexities, improving both flexibility and performance.
 
-3. **Advanced Loss Masking**:
+5. **Enhanced Input Processing**:
+   - **Input Embeddings**: Raw coupler curve images are patch-embedded using a linear projection and scaled by the square root of the model’s dimensionality.
+   - **Positional Encoding**: Sinusoidal positional encodings are precomputed and added to the embeddings, preserving sequence order.
 
-   - Implements a masked Mean Squared Error (MSE) loss to handle variable-length sequences and padding tokens.
+6. **Better Initialization**:
+   - All linear layers are initialized with **Xavier uniform initialization**, promoting stable gradient flow from the start of training.
 
-4. **Efficiency and Scalability**:
-   - Processes coupler curve images efficiently through patch embeddings and scaled positional encodings.
-   - Designed to handle a wide range of mechanism types and complexities.
-
----
+7. **Clean Modular Design**:
+   - Each component (embeddings, encoder, decoders, attention, normalization) is implemented as a separate, reusable module for ease of experimentation and future extension.
 
 ## Iterative Development Process
 
-The development process involved several iterations to refine the architecture and improve performance:
+### Early Exploration
 
-### Initial Attempts
+We began with a single-decoder Transformer adapted from NLP, but it quickly hit limitations:
 
-The project began with a single-decoder Transformer model inspired by natural language processing. However, early experiments revealed significant limitations:
+- **Inadequate Generalization**: Struggled with mechanisms involving more than six joints.
+- **Scalability Issues**: Larger models led to overfitting and diminishing returns.
 
-- **Poor Performance on Complex Mechanisms**: The single decoder struggled with mechanisms having more than six joints.
-- **Limited Scalability**: Increasing the model size improved results slightly but introduced overfitting and longer training times.
+### Key Architectural Shifts
 
-### Integration of LLAMA Features
-
-To address these challenges, features from the LLAMA architecture were integrated:
-
-1. **RMS Normalization**:
-   - Improved training stability and model convergence.
-2. **Scaled Embeddings**:
-   - Enhanced input and positional embeddings to capture spatial relationships effectively.
-3. **Dynamic Causal Masking**:
-   - Ensured that predictions were generated step-by-step during training and inference.
-
-### Introduction of Dual Decoders
-
-A major breakthrough came with the introduction of two independent decoders. This design allowed the model to handle mechanisms of varying complexity by splitting the task into two smaller, more manageable subtasks.
-
----
+- **RMSNorm Integration**: Replacing LayerNorm enhanced training consistency and reduced sensitivity to learning rate schedules.
+- **Dual-Decoders**: Splitting predictions into two decoders provided modularity and improved performance on complex mechanism synthesis tasks.
+- **Gated Feedforward Blocks**: Introducing SwiGLU-like structures allowed the model to model intricate joint relationships more effectively.
 
 ## Methodology
 
-### Input Representation
+### Input
 
-1. **Coupler Curves as Images**:
-
-   - Each trajectory is represented as a 2D grayscale image, divided into patches of fixed size.
-   - A convolutional layer extracts features from these patches, which are embedded into a fixed-dimensional vector.
-
+1. **Coupler Curve Images**:
+   - Converted to patches and embedded using a linear layer.
 2. **Mechanism Type Embeddings**:
-   - Each mechanism type is represented as a unique vector using a learnable embedding layer.
-   - The embedding is added to the input sequence to condition the model on the desired mechanism type.
+   - Learned embeddings added to each patch sequence to condition the model.
 
-### Model Architecture
+### Model
 
-1. **Transformer Encoder**:
+- **Encoder**:
+  - Processes combined embeddings, capturing spatial and contextual information.
+- **Dual Decoders**:
+  - Independently predict the two halves of the joint coordinate set, each with cross-attention to the encoder’s output.
+- **Projection Layers**:
+  - Map decoder outputs to 2D Cartesian coordinates.
 
-   - Processes the embedded input sequence (coupler curve patches + mechanism type embedding).
-   - Captures spatial relationships and encodes them into a latent representation.
+### Training
 
-2. **Dual Decoders**:
-
-   - Each decoder independently predicts one part of the mechanism (first and second sets of joint coordinates).
-   - Cross-attention layers allow the decoders to leverage information from the encoder's latent representation.
-
-3. **Projection Layers**:
-   - Map the decoder outputs back to Cartesian coordinates.
-
-### Training Process
-
-1. **Masked MSE Loss**:
-
-   - Handles variable-length sequences by masking padding tokens during loss computation.
+- **Loss Function**:  
+  Masked MSE loss handles padding efficiently:
 
    ```python
    def mse_loss(predictions, targets, mask_value=0.5):
@@ -151,7 +127,7 @@ During inference, the model generates mechanism designs using a conditional gree
 
 2. **Decoding**:
 
-   - Each decoder independently predicts its part of the mechanism, conditioned on the encoder's latent representation.
+   - Each decoder independently predicts its part of the mechanism, conditioned on the encoder's representation.
 
 3. **Stopping Condition**:
    - Decoding halts when an End-of-Sequence (EOS) token is detected.
@@ -194,13 +170,9 @@ def greedy_decode_conditional(model, source, mech_type, max_len, eos_token=torch
 
    - Extend the model to generate multiple mechanisms within the same type.
 
-2. **Scalability**:
-
-   - Adapt the architecture to handle mechanisms with more joints and higher complexities.
-
-3. **Optimization Frameworks**:
+2. **Optimization Frameworks**:
 
    - Integrate the model with optimization algorithms for real-time design applications.
 
-4. **Explainability**:
+3. **Explainability**:
    - Develop visualizations to interpret the model’s attention mechanisms and latent space.
