@@ -43,7 +43,7 @@ You can download see project presentation:
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        <iframe src="{{ '/assets/presentations/hackathon-presentation.pdf' | relative_url }}" class="img-fluid rounded z-depth-1" style="width:100%; height:600px;" frameborder="0"></iframe>
+        {% include pdf.liquid path="assets/presentations/hackathon-presentation.pdf" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">

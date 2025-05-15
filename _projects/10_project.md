@@ -9,11 +9,12 @@ related_publications: false
 **Demo Video**:
 
 <div class="row mt-3">
-   <div class="col-sm-8 mt-3 mt-md-0">
-   <video controls class="img-fluid rounded z-depth-1">
-      <source src="assets/video/app_demo.MP4" type="video/mp4">
-   </video>
-   </div>
+    <div class="col-sm mt-3 mt-md-0">
+        {% include video.liquid path="assets/video/app_demo.MP4" class="img-fluid rounded z-depth-1" controls=true autoplay=true %}
+    </div>
+</div>
+<div class="caption">
+    A demo video showcasing the app's functionality and results.
 </div>
 
 <div class="row">
