@@ -6,45 +6,74 @@ permalink: /
 profile:
   align: right
   image: prof_pic.jpeg
-  image_circular: false # crops the image to make it circular
+  image_circular: false
   more_info: >
-    <p> PhD Candidate, Generative AI</p> 
+    <p>PhD Candidate, Generative AI</p>
     <p>+1 631 304 0554</p>
     <p>Brooklyn, NY 11230</p>
 
-news: false # includes a list of news items
-selected_papers: true # includes a list of papers marked as "selected={true}"
-social: true # includes social icons at the bottom of the page
+news: false
+selected_papers: true
+social: true
 ---
 
-I'm **Anar**, a mechanical engineer turned machine learning researcher building AI systems that bridge digital and physical worlds. At Stony Brook University and Zortag, I create full-stack solutions that combine cutting-edge algorithms with real-world deployment:
+Hi, I’m **Anar** — a mechanical engineer turned machine learning researcher working at the intersection of AI and physical systems. I specialize in building end-to-end AI solutions that transition seamlessly from research to real-world deployment. Through my work at **Stony Brook University** and **Zortag**, I develop systems that bring intelligence to the edge — whether on mobile devices or robotic arms.
 
-- **🤖 Generative AI Design**: Developed a [Dual-Decoder Transformer](https://anarnuri.github.io/projects/9_project/) that automates mechanism synthesis
-- **📱 Mobile AI**: Built an [iPhone app](https://anarnuri.github.io/projects/10_project/) with real-time YOLOv8 inference + robotic dataset automation (99.84% accuracy)
-- **🔍 Document Intelligence**: Launched a [free RAG API](https://anarnuri.github.io/projects/11_project/) using Llama-3-70B for instant document QA
+---
 
-My Ph.D. research focuses on **multi-modal generative models** for mechanical engineering. I specialize in taking projects from concept to production—whether that means:
+### 🔬 Current Focus
 
-- Architecting novel neural networks (transformers, VAEs, diffusion models)
-- Optimizing training on HPC clusters
-- Deploying to mobile/edge devices
+My Ph.D. research explores **multi-modal generative models** for mechanical design. I work on neural architectures that synthesize mechanical mechanisms from scratch, combining domain-specific knowledge with powerful generative AI tools.
 
-Some of the models I’ve developed and deployed include a **transformer-based architecture** with a LLaMa2-inspired encoder and **diffusion-based decoder** for precise mechanism synthesis, a **conditional β-VAE** with Classifier-Free Guidance for controllable generation, a **graph-VAE** for representing structural relationships, and an **image-based VAE** paired with an MLP to bridge visual and geometric design spaces. I’ve also fine-tuned **Latent Diffusion Models** using **LoRA** and **quantization**, incorporating a **GNN-based tokenizer** to encode structured data for direct LLM input.
+Some highlights of my research include:
 
-All of these models are optimized for real-time inference and some are deployed on [MotionGen](https://motiongen.io). This full-stack, hands-on approach reflects my engineering mindset: rigorous, resourceful, and deeply committed to building practical and reliable AI systems from the ground up.
+- **🧠 Dual-Decoder Transformer** for [mechanism synthesis](https://anarnuri.github.io/projects/9_project/), generating coupler curves and predicting joint coordinates with high accuracy.
+- **📱 Mobile AI App** for [real-time object detection](https://anarnuri.github.io/projects/10_project/), deploying YOLOv8 on iPhone with automated robotic dataset generation (achieving 99.84% accuracy).
+- **📄 Document RAG API** powered by [Llama-3-70B](https://anarnuri.github.io/projects/11_project/), enabling fast, private document-based Q&A.
 
-One of my most significant contributions is the development of a **Dual-Decoder Transformer Model** for mechanism synthesis. This model processes coupler curve images and mechanism type embeddings to generate diverse and accurate designs. By leveraging two independent decoders, it efficiently predicts joint coordinates, making it a breakthrough in path synthesis for complex mechanisms.
+---
 
-To accelerate model training, I use **PyTorch Distributed Training** and **High-Performance Computing (HPC)** resources, enabling efficient training of large-scale generative architectures.
+### 🛠️ What I Build
 
-In addition to my research, I've created a **production-ready RAG API** that transforms document collections into queryable knowledge bases. This system combines:
+My work blends algorithm design with system engineering. I take ideas from concept to deployment, optimizing for both performance and usability:
 
-- **Llama-3-70B** for intelligent question answering
-- **FAISS vector search** with M2-BERT embeddings
-- **AWS serverless infrastructure** for scalable deployment
+- Custom neural architectures: transformers, VAEs, diffusion models
+- High-performance training using PyTorch Distributed + HPC clusters
+- Edge-ready deployment on iOS, embedded systems, and robotic platforms
 
-The API delivers accurate, context-aware answers in **under 1.2 seconds** while maintaining strict data privacy - all available through a free tier for personal and academic use.
+Technologies I’ve engineered include:
 
-In addition to my research, I work as a **Machine Learning Engineer at Zortag**, where I program and automate the **myCobot 280 PI** robotic arm for dataset generation, simulating human-like motion to reduce manual effort. I’ve also fine-tuned object detection models like **YOLOv8**, improving accuracy and speeding up the data labeling pipeline. Recently, I **developed an iPhone app** that deploys my trained models for near real-time inference. This significantly improves practical deployment by enabling **instant QR code verification** and **real-time object detection** on mobile devices.
+- A **Transformer model** with a LLaMa2-style encoder and **diffusion-based decoder**
+- A **conditional β-VAE** with Classifier-Free Guidance for controllable generation
+- A **graph-VAE** for encoding structural relationships in mechanical linkages
+- An **image-based VAE** + MLP pipeline to connect visual and geometric design
+- Fine-tuned **Latent Diffusion Models** with **LoRA** and **quantization**
+- A **GNN-based tokenizer** that transforms structured data into LLM-ready input
 
-Feel free to explore my [website](https://anarnuri.github.io) to learn more about my projects and experiences. Whether you're here out of curiosity or looking to connect, I’m excited to share my journey with you!
+Many of these models are optimized for real-time inference and integrated into platforms like [MotionGen](https://motiongen.io).
+
+---
+
+### 🤖 Industry Work
+
+As a **Machine Learning Engineer at Zortag**, I program the **myCobot 280 PI** robotic arm to mimic human motion for dataset generation. I’ve also fine-tuned **YOLOv8** for object detection and built a mobile app that brings these models to life, supporting:
+
+- Real-time object detection on iPhone
+- Instant QR code verification
+- Seamless deployment of trained models to edge devices
+
+---
+
+### 📚 More
+
+I also developed a **production-ready Retrieval-Augmented Generation (RAG) API** that turns document sets into responsive knowledge bases. Built with:
+
+- **Llama-3-70B** for advanced QA
+- **FAISS** vector search + M2-BERT embeddings
+- **AWS serverless infrastructure** for scalable, secure deployment
+
+This system delivers intelligent answers in under **1.2 seconds**, with strict data privacy, and is freely accessible for academic or personal use.
+
+---
+
+Feel free to explore my [website](https://anarnuri.github.io) to dive deeper into my work. Whether you're a fellow researcher, potential collaborator, or just curious, I’m glad you’re here!
