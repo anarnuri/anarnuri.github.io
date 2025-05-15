@@ -19,9 +19,9 @@ social: true # includes social icons at the bottom of the page
 
 I'm **Anar**, a mechanical engineer turned machine learning researcher building AI systems that bridge digital and physical worlds. At Stony Brook University and Zortag, I create full-stack solutions that combine cutting-edge algorithms with real-world deployment:
 
-- **🤖 Generative AI Design**: Developed a [Dual-Decoder Transformer](https://anarnuri.github.io/projects/9_project) that automates mechanism synthesis
-- **📱 Mobile AI**: Built an [iPhone app](https://anarnuri.github.io/projects/10_project) with real-time YOLOv8 inference + robotic dataset automation (99.84% accuracy)
-- **🔍 Document Intelligence**: Launched a [free RAG API](https://anarnuri.github.io/projects/11_project) using Llama-3-70B for instant document QA
+- **🤖 Generative AI Design**: Developed a [Dual-Decoder Transformer](https://anarnuri.github.io/projects/9_project/) that automates mechanism synthesis
+- **📱 Mobile AI**: Built an [iPhone app](https://anarnuri.github.io/projects/10_project/) with real-time YOLOv8 inference + robotic dataset automation (99.84% accuracy)
+- **🔍 Document Intelligence**: Launched a [free RAG API](https://anarnuri.github.io/projects/11_project/) using Llama-3-70B for instant document QA
 
 My Ph.D. research focuses on **multi-modal generative models** for mechanical engineering. I specialize in taking projects from concept to production—whether that means:
 
