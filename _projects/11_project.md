@@ -6,15 +6,6 @@ category: Projects
 related_publications: false
 ---
 
-<div class="row mt-3">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include video.liquid path="assets/video/web_demo.mp4" class="img-fluid rounded z-depth-1" controls=true autoplay=true %}
-    </div>
-</div>
-<div class="caption">
-    See how this free tool can save you hours of document searching - your personal AI research assistant!
-</div>
-
 # Your Free 24/7 Document Expert
 
 ### **"I built what I needed myself - now I'm sharing it with everyone!"**
@@ -23,6 +14,15 @@ Tired of losing important details in long documents? This tool is my gift to you
 ✨ **100% free** to use (seriously, no hidden costs)  
 ✨ **No paywalls** - I cover the server costs because I hate subscriptions  
 ✨ **Privacy-first** - your documents never leave your session
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include video.liquid path="assets/video/web_demo.mp4" class="img-fluid rounded z-depth-1" controls=true autoplay=true %}
+    </div>
+</div>
+<div class="caption">
+    See how this free tool can save you hours of document searching - your personal AI research assistant!
+</div>
 
 **Perfect for:**
 

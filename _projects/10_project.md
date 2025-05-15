@@ -6,17 +6,6 @@ category: Projects
 related_publications: false
 ---
 
-## Demo Video:
-
-<div class="row mt-3">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include video.liquid path="assets/video/app_demo.mp4" class="img-fluid rounded z-depth-1" controls=true autoplay=true %}
-    </div>
-</div>
-<div class="caption">
-    A demo video showcasing the app's functionality and results.
-</div>
-
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
         {% include figure.liquid loading="eager" path="assets/img/real_labels.png" title="Automated Dataset Generation with myCobot 280 PI" class="img-fluid rounded z-depth-1" %}
@@ -27,6 +16,15 @@ related_publications: false
 </div>
 
 # Automated Dataset Generation, Object Detection, and Mobile Deployment
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include video.liquid path="assets/video/app_demo.mp4" class="img-fluid rounded z-depth-1" controls=true autoplay=true %}
+    </div>
+</div>
+<div class="caption">
+    A demo video showcasing the app's functionality and results.
+</div>
 
 ## Overview
 
