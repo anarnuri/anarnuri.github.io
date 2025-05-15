@@ -113,12 +113,3 @@ I'm currently testing with real users:
 1. **Will always be free** for personal/small business use
 2. **No sneaky data collection** - your documents = your property
 3. **Transparent costs** - if ever needed, community voting on premium features
-
-<div class="row mt-3">
-  <div class="col-sm mt-3 mt-md-0">
-    {% include figure.liquid loading="eager" path="assets/img/rag-architecture.png" title="Simple, Secure Architecture" class="img-fluid rounded z-depth-1" %}
-  </div>
-</div>
-<div class="caption">
-  How your documents stay secure while getting processed by AI magic!
-</div>
