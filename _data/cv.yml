@@ -31,24 +31,24 @@
       institution: Stony Brook University
       year: Sep 2020 - Present
       description:
-        - Designed and implemented a novel dual-decoder transformer with Mixture-of-Experts (MoE) for multimodal path synthesis, achieving 15% higher accuracy and <200ms inference time:
-            - MoE-augmented decoders (8 experts, 2 active + 1 shared) with dynamic gating and forced expert utilization for improved sample diversity and stability.
-            - Dual-branch architecture using RMSNorm and cross-attention, processing structured inputs (curves/graphs) encoded by a contrastive ResNet backbone for multimodal fusion.
-            - Optimized training pipeline combining Classifier-Free Guidance with LoRA fine-tuning for task adaptability.
-        - Extended the framework with three complementary architectures:
-            - Diffusion-augmented transformer with LLaMa2 encoder and diffusion decoder for high-precision synthesis.
-            - Conditional beta-VAE and graph-VAE models with adaptive latent space constraints and Classifier-Free Guidance.
-            - Image-based VAE and MLP pipeline for mapping between latent space and mechanism representations.
-        - Fine-tuned YOLOv4 for sketch-based object detection and implemented robust post-processing for sketch-to-structure conversion.
-        - Led full-stack research projects, including dataset creation, preprocessing, model training/validation, and augmentation.
-        - Tracked experiments with Weights & Biases and managed datasets on Kaggle. Developed using HPC (SLURM) and cloud GPU platforms (Lambda, VAST.AI).
-        - Demonstrated deep expertise in neural networks, loss functions, and data tooling with PyTorch (Lightning), Hugging Face, NumPy, SciPy, OpenCV, and scikit-learn.
-        - Regularly presented work at ASME conferences (2021–2024) and contributed to the broader research community through publications and open-source contributions.
+        - "Designed and implemented a novel dual-decoder transformer with Mixture-of-Experts (MoE) for multimodal path synthesis, achieving 15% higher accuracy and <200ms inference time:"
+        - "MoE-augmented decoders (8 experts, 2 active + 1 shared) with dynamic gating and forced expert utilization for improved sample diversity and stability."
+        - "Dual-branch architecture using RMSNorm and cross-attention, processing structured inputs (curves/graphs) encoded by a contrastive ResNet backbone for multimodal fusion."
+        - "Optimized training pipeline combining Classifier-Free Guidance with LoRA fine-tuning for task adaptability."
+        - "Extended the framework with three complementary architectures:"
+        - "Diffusion-augmented transformer with LLaMa2 encoder and diffusion decoder for high-precision synthesis."
+        - "Conditional beta-VAE and graph-VAE models with adaptive latent space constraints and Classifier-Free Guidance."
+        - "Image-based VAE and MLP pipeline for mapping between latent space and mechanism representations."
+        - "Fine-tuned YOLOv4 for sketch-based object detection and implemented robust post-processing for sketch-to-structure conversion."
+        - "Led full-stack research projects, including dataset creation, preprocessing, model training/validation, and augmentation."
+        - "Tracked experiments with Weights & Biases and managed datasets on Kaggle. Developed using HPC (SLURM) and cloud GPU platforms (Lambda, VAST.AI)."
+        - "Demonstrated deep expertise in neural networks, loss functions, and data tooling with PyTorch (Lightning), Hugging Face, NumPy, SciPy, OpenCV, and scikit-learn."
+        - "Regularly presented work at ASME conferences (2021–2024) and contributed to the broader research community through publications and open-source contributions."
 
-    - title: Machine Learning Engineer
+    - title: Experience
       type: time_table
       contents:
-        - title: Machine Learning Intern
+        - title: Machine Learning Engineer
           institution: Zortag
           year: Aug 2024 – Present
           description:
