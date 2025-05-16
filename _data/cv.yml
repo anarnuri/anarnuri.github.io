@@ -45,19 +45,16 @@
         - "Demonstrated deep expertise in neural networks, loss functions, and data tooling with PyTorch (Lightning), Hugging Face, NumPy, SciPy, OpenCV, and scikit-learn."
         - "Regularly presented work at ASME conferences (2021–2024) and contributed to the broader research community through publications and open-source contributions."
 
-    - title: Experience
-      type: time_table
-      contents:
-        - title: Machine Learning Engineer
-          institution: Zortag
-          year: Aug 2024 – Present
-          description:
-            - Fine-tuned YOLOv8 models, boosting detection accuracy from 90% to nearly 100% and reducing inference time to milliseconds.
-            - Streamlined the detection-verification pipeline by replacing the two-step process with a single-step architecture, significantly improving system efficiency.
-            - Automated the myCobot 280 PI robotic arm to replicate human hand movements for image and video capture, cutting manual workload by 60%.
-            - Developed an automated data labeling pipeline, tripling annotation speed and reducing dataset preparation time from several hours to approximately one hour.
-            - Built a real-time iPhone-based inference system for QR code detection using SwiftUI and CoreML, achieving minimal-latency on-device processing.
-            - Containerized the model with Docker for scalable deployment across diverse iOS environments, ensuring portability and ease of integration.
+    - title: Machine Learning Engineer
+      institution: Zortag
+      year: Aug 2024 – Present
+      description:
+        - Fine-tuned YOLOv8 models, boosting detection accuracy from 90% to nearly 100% and reducing inference time to milliseconds.
+        - Streamlined the detection-verification pipeline by replacing the two-step process with a single-step architecture, significantly improving system efficiency.
+        - Automated the myCobot 280 PI robotic arm to replicate human hand movements for image and video capture, cutting manual workload by 60%.
+        - Developed an automated data labeling pipeline, tripling annotation speed and reducing dataset preparation time from several hours to approximately one hour.
+        - Built a real-time iPhone-based inference system for QR code detection using SwiftUI and CoreML, achieving minimal-latency on-device processing.
+        - Containerized the model with Docker for scalable deployment across diverse iOS environments, ensuring portability and ease of integration.
 
     - title: Mechanical Engineer Intern
       institution: Flower Turbines LLC
