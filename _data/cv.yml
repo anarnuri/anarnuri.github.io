@@ -24,9 +24,20 @@
       year: 2016 - 2019
       description:
         - "GPA: 3.81"
+
 - title: Experience
   type: time_table
   contents:
+    - title: Robotics Engineer
+      institution: DL-RL
+      year: Apr 2025 - Present
+      description:
+        - Generated **large-scale synthetic datasets** in Isaac Sim for the SO100 robotic arm, leveraging inverse kinematics to create diverse, task-relevant scenarios. Published datasets on Hugging Face, where they receive regular community downloads.  
+        - Fine-tuned **Gr00t-based control models** using PyTorch on both simulated and real-world datasets, ensuring robust transfer from virtual environments to physical hardware.  
+        - Conducted **closed-loop experiments** on the SO100 robotic arm, achieving **90–95% success rates** on pick and pick-and-place tasks — a significant improvement over baseline.  
+        - Designed a **modular dataset generation pipeline** with Git-based version control, enabling reproducibility and collaborative development across research teams.  
+        - Integrated continuous testing workflows to evaluate **behavior consistency** between simulation and hardware deployment, improving reliability in real-world tasks.  
+
     - title: Graduate Research Assistant
       institution: Stony Brook University
       year: Sep 2020 - Present
@@ -47,14 +58,15 @@
 
     - title: Machine Learning Engineer
       institution: Zortag
-      year: Aug 2024 – Present
+      year: Aug 2024 – Aug 2025
       description:
-        - Fine-tuned YOLOv8 models, boosting detection accuracy from 90% to nearly 100% and reducing inference time to milliseconds.
-        - Streamlined the detection-verification pipeline by replacing the two-step process with a single-step architecture, significantly improving system efficiency.
-        - Automated the myCobot 280 PI robotic arm to replicate human hand movements for image and video capture, cutting manual workload by 60%.
-        - Developed an automated data labeling pipeline, tripling annotation speed and reducing dataset preparation time from several hours to approximately one hour.
-        - Built a real-time iPhone-based inference system for QR code detection using SwiftUI and CoreML, achieving minimal-latency on-device processing.
-        - Containerized the model with Docker for scalable deployment across diverse iOS environments, ensuring portability and ease of integration.
+        - Fine-tuned **YOLOv8 models**, boosting detection accuracy from 90% to nearly **100%** and reducing inference time to milliseconds.  
+        - Streamlined the detection-verification pipeline by replacing the two-step process with a single-step architecture, significantly improving system efficiency.  
+        - Automated the **myCobot 280 PI** robotic arm to replicate human hand movements for image and video capture, cutting manual workload by 60%.  
+        - Developed an **automated data labeling pipeline**, tripling annotation speed and reducing dataset preparation time from several hours to approximately one hour.  
+        - Built a **real-time iPhone-based inference system** for QR code detection using SwiftUI and CoreML, achieving minimal-latency on-device processing.  
+        - Integrated a **cloud-based image transfer system** into the iOS app, automatically uploading captured data to a central database for dataset expansion. This continuous feedback loop enhanced fine-tuning, enlarged the training dataset, and further improved model generalization and overall success rates.  
+        - Containerized the model with **Docker** for scalable deployment across diverse iOS environments, ensuring portability and ease of integration.  
 
     - title: Mechanical Engineer Intern
       institution: Flower Turbines LLC
@@ -68,6 +80,7 @@
           simulations using Ansys.
         - Designed novel rooftop installations for wind turbines with Autodesk
           Inventor CAD.
+
     - title: Summer Mechanical Engineer Intern
       institution: BP
       year: Jun 2019 - Sep 2019
@@ -80,6 +93,7 @@
           and safety.
         - Led piping design and stress analysis to optimize installations and
           improve structural integrity.
+
     - title: Undergraduate Research Assistant
       institution: Stony Brook University
       year: Sep 2018 - May 2020
@@ -91,6 +105,7 @@
           analyzed data.
         - Skilled in piping design, stress analysis, and optimizing
           installations for better performance and integrity.
+          
 - title: Honors and Awards
   type: time_table
   contents:
