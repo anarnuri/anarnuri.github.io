@@ -6,20 +6,18 @@ category: Projects
 related_publications: false
 ---
 
-# Benchmarking Open Control Models — Real-world Lessons from DL-RL
+<div class="row mt-3 justify-content-center"> <!-- Added justify-content-center -->
+    <div class="col-sm mt-3 mt-md-0 text-center"> <!-- Added text-center -->
+        {% include video.liquid path="assets/video/episode_000001.mp4" class="img-fluid rounded z-depth-1 mx-auto d-block" controls=true autoplay=false %}
+    </div>
+</div>
+<div class="caption text-center"> <!-- Added text-center -->
+    See the SO100 arm performing picking red cube task.
+</div>
 
 ### **“Open-source control models promise plug-and-play robotics — but do they really work off the shelf?”**
 
 At **DL-RL** I built an end-to-end pipeline to answer that exact question. We used the SO100 robotic arm, large synthetic datasets from Isaac Sim, and extensive fine-tuning and evaluation to measure how well open control models (e.g., **Gr00t**) actually perform in real-world deployment. The short answer: they can be powerful, but only when you understand how they were trained and when your fine-tuning, data, and evaluation are done carefully.
-
-<div class="row mt-3">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include video.liquid path="assets/video/episode_000001.mp4" class="img-fluid rounded z-depth-1" controls=true autoplay=false %}
-    </div>
-</div>
-<div class="caption">
-    See the SO100 arm performing picking red cube task.
-</div>
 
 **Perfect for:**
 
