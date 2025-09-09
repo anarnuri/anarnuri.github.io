@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 🔬 Project 12 — Benchmarking Gr00t & Sim-to-Real on the SO100 Arm
+title: 🔬 Benchmarking Gr00t & Sim-to-Real on the SO100 Arm
 importance: 1
 category: Projects
 related_publications: false
@@ -68,7 +68,7 @@ Because of these realities, we treat this project as a **benchmarking and transp
 - The full benchmarking report, training configs, and evaluation scripts will be published alongside an open repository when the manuscript is released.
 
 <div class="alert alert-success" role="alert">
-  <strong>Open science first.</strong> Our goal is to give researchers clear, reproducible guidance for using and evaluating open control models in real robots.
+  Our goal is to give researchers clear, reproducible guidance for using and evaluating open control models in real robots.
 </div>
 
 ---
@@ -78,7 +78,3 @@ Because of these realities, we treat this project as a **benchmarking and transp
 1. Publish **complete** recipes (data + config + code) so others can reproduce and extend our benchmarks.
 2. Share **actionable guidance** — which hyperparameters matter, how to expand datasets, and how to interpret results on hardware.
 3. Maintain the datasets and tools as an open resource to accelerate rigorous sim-to-real research.
-
----
-
-If you’d like, I can drop in the exact Hugging Face dataset link and a short “How to reproduce” guide (shell commands + minimal compute specs) directly into this page.
