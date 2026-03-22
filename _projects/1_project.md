@@ -2,7 +2,7 @@
 layout: page
 title: Winning Hackathon Journey
 importance: 2
-category: Projects
+category: Personal
 related_publications: false
 ---
 
@@ -52,7 +52,7 @@ Throughout this hackathon, our team was driven by the goal of creating solutions
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        {% include video.liquid path="assets/video/orig.mp4" class="img-fluid rounded z-depth-1" controls=true autoplay=false %}
+        {% include video_if_exists.liquid path="assets/video/orig.mp4" class="img-fluid rounded z-depth-1" controls=true autoplay=false preload="auto" %}
     </div>
 </div>
 <div class="caption">

@@ -11,3 +11,5 @@ assets/libs/
 node_modules/
 vendor
 .idea
+# Local originals kept after re-encoding videos for the web (avoid duplicating large binaries in git)
+assets/video/**/*_backup.*

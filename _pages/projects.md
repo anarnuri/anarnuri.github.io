@@ -1,11 +1,11 @@
 ---
 layout: page
-title: Projects
+title: Work
 permalink: /projects/
-description: A growing collection of my projects :)
+description: Industry robotics, simulation, and computer-vision systems.
 nav: true
-nav_order: 3
-display_categories: [Projects]
+nav_order: 4
+display_categories: [Work]
 horizontal: false
 ---
 

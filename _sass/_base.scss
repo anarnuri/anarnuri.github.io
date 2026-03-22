@@ -1287,3 +1287,13 @@ ninja-keys::part(ninja-input-wrapper) {
     border-bottom-color: var(--global-divider-color);
   }
 }
+
+// Portrait phone / tall demo clips: fixed aspect box so play doesn’t reflow the page
+.portfolio-video-portrait {
+  max-width: min(100%, 28rem);
+  --bs-aspect-ratio: 177.78%; // 9:16 (height / width × 100%)
+
+  video {
+    object-fit: contain; // in case object-fit-contain utility isn’t in the build
+  }
+}

@@ -1,115 +1,32 @@
 ---
 layout: page
-title: 🎉 Free AI Document Assistant - Ask Anything About Your Files!
+title: Browser document Q&A (Llama-3 + RAG)
 importance: 1
-category: Projects
+category: Personal
 related_publications: false
 ---
 
-# Your Free 24/7 Document Expert
-
-### **"I built what I needed myself - now I'm sharing it with everyone!"**
-
-Tired of losing important details in long documents? This tool is my gift to you:  
-✨ **100% free** to use (seriously, no hidden costs)  
-✨ **No paywalls** - I cover the server costs because I hate subscriptions  
-✨ **Privacy-first** - your documents never leave your session
+I built a **browser-based document assistant** to see how far I could push **private, session-local Q&A** over PDFs and text: chunking, embeddings, vector retrieval, and a **Llama-3–class** model for answers—without sending document content to a third-party app beyond the inference API I chose for the experiment.
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        {% include video.liquid path="assets/video/web_demo.mp4" class="img-fluid rounded z-depth-1" controls=true autoplay=false %}
+        {% include video_if_exists.liquid path="assets/video/web_demo.mp4" class="img-fluid rounded z-depth-1" controls=true autoplay=false preload="auto" %}
     </div>
 </div>
 <div class="caption">
-    See how this free tool can save you hours of document searching - your personal AI research assistant!
+    Screen capture of the prototype: upload, question, and grounded-style answers over in-session documents.
 </div>
 
-**Perfect for:**
+**What I shipped**
 
-- Students researching papers
-- Lawyers reviewing contracts
-- Developers searching documentation
-- Anyone drowning in PDFs!
+- **Ingestion pipeline** — PDF/text handling with cleanup and chunking suitable for retrieval (LangChain-style orchestration, PyPDF, custom normalization).
+- **Retrieval stack** — **M2-BERT** embeddings with **FAISS** for search over chunks; prompt assembly so the LLM works from retrieved context.
+- **Reasoning layer** — **Llama-3-70B** via **Together AI** for answer generation in early iterations.
+- **Hosting** — **AWS** serverless-style deployment with scaling in mind for bursty use.
 
----
+**What I learned**
 
-## Why This Will Change How You Work
+- End-to-end RAG is less about the headline model and more about **chunk boundaries**, **embedding quality**, and **failure modes** when retrieval misses.
+- Keeping **sessions scoped** and **documents client/session-bound** is doable, but latency and cost trade-offs are real at moderate scale.
 
-### 💸 Actually Free (Not "Free Trial")
-
-I've optimized the system to run on minimal AWS credits:
-
-- Free tier covers 90% of personal use cases
-- Only if we hit heavy traffic (like 10,000+ users) might I add optional donations
-- No feature paywalls - what you see is what you get
-
-### 🕵️‍♂️ Finds What You'd Never Think to Search
-
-Traditional search fails when you don't know the exact terms. My AI:
-
-1. Understands the **meaning** behind your question
-2. Finds **related concepts** you didn't think to search
-3. Gives **direct answers** instead of page numbers
-
-_Try asking:_  
-"Explain this technical section like I'm 15"  
-"What are the risks mentioned in this report?"
-
-### 🌐 Works Anywhere
-
-- Browser-based (no install needed)
-- Mobile-friendly interface
-- Lightweight enough for slow connections
-
----
-
-## The Tech That Makes It Possible
-
-While you don't need to know this, fellow techies will appreciate:
-
-**Document Processing:**
-
-- LangChain's smart text chunking
-- PyPDF for perfect PDF extraction
-- Custom cleanup algorithms
-
-**AI Magic:**
-
-- Llama-3-70B (via Together AI) for reasoning
-- M2-BERT embeddings to understand content
-- FAISS vector search for instant results
-
-**Hosting:**
-
-- AWS serverless stack (pay-per-use pricing)
-- Automatic scaling during traffic spikes
-- Daily backups just in case
-
----
-
-## Try It Right Now!
-
-I'm currently testing with real users:
-
-1. **Current Features:**
-
-   - Upload PDFs, Word docs, text
-   - Ask unlimited questions
-   - Download your session history
-
-2. **Coming Soon:**
-   - Team sharing options
-   - Chrome extension for web articles
-   - "Explain this" button for confusing text
-
-<div class="alert alert-success" role="alert">
-  <strong>No waiting list!</strong> The free version is live now at <a href="#" class="alert-link">[URL COMING SOON]</a>
-</div>
-
----
-
-## My Promise to You
-
-1. **Will always be free** for personal/small business use
-2. **No sneaky data collection** - your documents = your property
-3. **Transparent costs** - if ever needed, community voting on premium features
+This was a **personal build** for practice and portfolio; it is not a product launch. A public demo URL may follow if I revisit hosting and terms of use.

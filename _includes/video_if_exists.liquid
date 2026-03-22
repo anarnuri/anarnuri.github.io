@@ -1,0 +1,35 @@
+{% comment %}
+  Embeds video only if the file exists as a static file (avoids broken players for missing MP4s).
+  Pass path=, class=, controls=, autoplay=, caption=, muted=, novolume=, preload=, portrait_wrap=, cache_bust= like video.liquid.
+{% endcomment %}
+{% assign vpath = include.path %}
+{% assign vurl = vpath | prepend: '/' %}
+{% comment %}Match static file path with or without a leading slash (varies by Jekyll version).{% endcomment %}
+{% assign hit = site.static_files | where: 'path', vurl | first %}
+{% unless hit %}
+  {% assign hit = site.static_files | where: 'path', vpath | first %}
+{% endunless %}
+{% if hit %}
+  {% include video.liquid
+    path=include.path
+    class=include.class
+    controls=include.controls
+    autoplay=include.autoplay
+    caption=include.caption
+    muted=include.muted
+    novolume=include.novolume
+    preload=include.preload
+    portrait_wrap=include.portrait_wrap
+    loop=include.loop
+    poster=include.poster
+    cache_bust=include.cache_bust
+  %}
+{% else %}
+  <div class="alert alert-secondary" role="note">
+    <p class="mb-0">
+      <strong>Video not in the site yet.</strong>
+      Add <code>{{ vpath }}</code> to your repo (commit and push for GitHub Pages), then rebuild — the player will appear here automatically.
+      Or open locally after placing the file under that path.
+    </p>
+  </div>
+{% endif %}

@@ -2,7 +2,7 @@
 layout: page
 title: Mechformer. A Dual-Decoder Transformer with RMSNorm and SwiGLU for Mechanism Synthesis
 importance: 1
-category: Projects
+category: Research
 related_publications: false
 ---
 

@@ -1,8 +1,8 @@
 ---
 layout: page
 title: Automating Data Generation and AI Inference with myCobot 280 PI & iPhone App
-importance: 1
-category: Projects
+category: Work
+importance: 3
 related_publications: false
 ---
 
@@ -19,7 +19,7 @@ related_publications: false
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        {% include video.liquid path="assets/video/app_demo.MP4" class="img-fluid rounded z-depth-1" controls=true autoplay=false %}
+        {% include video_if_exists.liquid path="assets/video/app_demo.MP4" class="img-fluid rounded z-depth-1" controls=true autoplay=false %}
     </div>
 </div>
 <div class="caption">

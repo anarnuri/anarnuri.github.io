@@ -2,7 +2,7 @@
 layout: page
 title: An Invariant Representation of Coupler Curves using a Variational AutoEncoder - Application to Path Synthesis of Four-Bar Mechanisms
 importance: 3
-category: Projects
+category: Research
 related_publications: false
 ---
 

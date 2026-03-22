@@ -1,14 +1,15 @@
 ---
 layout: page
 title: 🔬 Benchmarking Gr00t & Sim-to-Real on the SO100 Arm
-importance: 1
-category: Projects
+description: Isaac Sim datasets, Gr00t/π0 fine-tuning, and closed-loop success on real hardware (DL-RL).
+category: Work
+importance: 2
 related_publications: false
 ---
 
 <div class="row mt-3 justify-content-center"> <!-- Added justify-content-center -->
     <div class="col-sm mt-3 mt-md-0 text-center"> <!-- Added text-center -->
-        {% include video.liquid path="assets/video/episode_000001.mp4" class="img-fluid rounded z-depth-1 mx-auto d-block" controls=true autoplay=false %}
+        {% include video_if_exists.liquid path="assets/video/episode_000001.mp4" class="img-fluid rounded z-depth-1 mx-auto d-block" controls=true autoplay=false %}
     </div>
 </div>
 <div class="caption text-center"> <!-- Added text-center -->
@@ -53,7 +54,7 @@ Because of these realities, we treat this project as a **benchmarking and transp
 
 ## Achievements & deliverables
 
-- Generated and published **large-scale synthetic datasets** for the SO100 arm (see Hugging Face). Datasets receive steady community downloads and are versioned for reproducibility. ([Hugging Face link placeholder](https://huggingface.co/anurizada)).
+- Generated and published **large-scale synthetic datasets** for the SO100 arm on **[Hugging Face](https://huggingface.co/anurizada)** — versioned for reproducibility and steady community use.
 - **Fine-tuned Gr00t** on combined simulated + real data, then deployed and evaluated on the physical SO100 arm. Closed-loop experiments achieved **~90–95% success rates** on pick and pick-and-place tasks in our testbed.
 - Built a complete benchmarking suite (data generation → training → hardware evaluation) and documented the **training recipes, hyperparameter sweeps, and failure cases**.
 - Commitment to publication: we will release a **detailed benchmarking report** (code, configs, logs, and evaluation scripts) so the community knows what to expect from open control models and how to reproduce/improve our results.

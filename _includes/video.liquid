@@ -1,22 +1,79 @@
+{% comment %}
+  Use src on <video> (not nested <source>) so HTML minifiers don't emit invalid </source>.
+  Jekyll passes include flags as strings: autoplay=false becomes the string "false", which is truthy in Liquid — only enable autoplay for boolean true or string "true".
+  preload: none | metadata (default) | auto — auto can help flaky local servers; none reduces work when many players are on one page.
+  portrait_wrap: stable 9:16 box for tall phone clips (avoids layout jump / “twitch” on play).
+  novolume: controlslist="novolume" (Chromium) + muted; use for silent B-roll.
+{% endcomment %}
 {% assign extension = include.path | split: '.' | last %}
+{% assign video_src = include.path | relative_url %}
+{% if include.cache_bust %}
+  {% assign video_src = include.path | relative_url | bust_file_cache %}
+{% endif %}
+
+{% assign enable_autoplay = false %}
+{% if include.autoplay == true or include.autoplay == 'true' %}
+  {% assign enable_autoplay = true %}
+{% endif %}
+
+{% assign enable_controls = true %}
+{% if include.controls == false or include.controls == 'false' %}
+  {% assign enable_controls = false %}
+{% endif %}
+
+{% assign enable_muted = false %}
+{% if include.muted == true or include.muted == 'true' %}
+  {% assign enable_muted = true %}
+{% endif %}
+{% if enable_autoplay %}
+  {% assign enable_muted = true %}
+{% endif %}
+
+{% assign enable_novolume = false %}
+{% if include.novolume == true or include.novolume == 'true' %}
+  {% assign enable_novolume = true %}
+  {% assign enable_muted = true %}
+{% endif %}
+
+{% assign v_preload = 'metadata' %}
+{% if include.preload == 'none' or include.preload == 'auto' %}
+  {% assign v_preload = include.preload %}
+{% endif %}
+
+{% assign use_portrait_wrap = false %}
+{% if include.portrait_wrap == true or include.portrait_wrap == 'true' %}
+  {% assign use_portrait_wrap = true %}
+{% endif %}
+
+{% assign clist = '' %}
+{% if enable_novolume %}
+  {% assign clist = 'novolume' %}
+{% endif %}
 
 <figure>
   {% if extension == 'mp4' or extension == 'MP4' or extension == 'webm' or extension == 'ogg' %}
+    {% if use_portrait_wrap %}
+    <div class="ratio portfolio-video-portrait mx-auto">
+    {% endif %}
     <video
-      src="{% if include.cache_bust %}{{ include.path | relative_url | bust_file_cache }}{% else %}{{ include.path | relative_url }}{% endif %}"
-      {% if include.class %}
+      src="{{ video_src }}"
+      {% if use_portrait_wrap %}
+        class="{% if include.class %}{{ include.class }} {% endif %}object-fit-contain position-absolute top-0 start-0 w-100 h-100"
+      {% elsif include.class %}
         class="{{ include.class }}"
       {% endif %}
+      {% unless use_portrait_wrap %}
       {% if include.width %}
         width="{{ include.width }}"
       {% else %}
-        width="auto"
+        width="100%"
       {% endif %}
       {% if include.height %}
         height="{{ include.height }}"
       {% else %}
         height="auto"
       {% endif %}
+      {% endunless %}
       {% if include['min-width'] %}
         min-width="{{ include.min-width }}"
       {% endif %}
@@ -27,31 +84,37 @@
         max-width="{{ include.max-width }}"
       {% endif %}
       {% if include['max-height'] %}
-        height="{{ include.max-height }}"
+        max-height="{{ include.max-height }}"
       {% endif %}
       {% if include.title %}
         title="{{ include.title }}"
       {% endif %}
-      {% if include.alt %}
-        alt="{{ include.alt }}"
-      {% endif %}
-      {% if include.autoplay %}
+      {% if enable_autoplay %}
         autoplay
       {% endif %}
-      {% if include.controls %}
+      {% if enable_controls %}
         controls
       {% endif %}
-      {% if include.loop %}
+      {% if include.loop == true or include.loop == 'true' %}
         loop
       {% endif %}
-      {% if include.muted %}
+      {% if enable_muted %}
         muted
       {% endif %}
-      {% if include.poster %}
-        poster="{{ include.poster }}"
+      playsinline
+      preload="{{ v_preload }}"
+      {% if clist != '' %}
+        controlslist="{{ clist }}"
       {% endif %}
-    />
-
+      {% if include.poster %}
+        poster="{{ include.poster | relative_url }}"
+      {% endif %}
+    >
+      <p class="text-muted small mb-0">Your browser cannot play this video inline. <a href="{{ video_src }}" download>Download the file</a>.</p>
+    </video>
+    {% if use_portrait_wrap %}
+    </div>
+    {% endif %}
   {% else %}
     <iframe
       src="{{ include.path }}"
@@ -89,7 +152,7 @@
       {% if include.title %}
         title="{{ include.title }}"
       {% endif %}
-    />
+    ></iframe>
   {% endif %}
   {% if include.caption %}
     <figcaption class="caption">{{ include.caption }}</figcaption>

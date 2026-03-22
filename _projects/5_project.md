@@ -2,7 +2,7 @@
 layout: page
 title: Freshman Robotics Project
 importance: 2
-category: Projects
+category: Personal
 related_publications: false
 ---
 
@@ -16,7 +16,7 @@ This project not only refined my technical skills but also imparted invaluable l
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        {% include video.liquid path="assets/video/MEC101.mp4" class="img-fluid rounded z-depth-1" controls=true autoplay=false %}
+        {% include video_if_exists.liquid path="assets/video/MEC101.mp4" class="img-fluid rounded z-depth-1" controls=true autoplay=false %}
     </div>
 </div>
 <div class="caption">
