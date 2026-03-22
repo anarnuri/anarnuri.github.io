@@ -53,7 +53,7 @@
 <figure>
   {% if extension == 'mp4' or extension == 'MP4' or extension == 'webm' or extension == 'ogg' %}
     {% if use_portrait_wrap %}
-    <div class="ratio portfolio-video-portrait mx-auto">
+      <div class="ratio portfolio-video-portrait mx-auto">
     {% endif %}
     <video
       src="{{ video_src }}"
@@ -63,16 +63,16 @@
         class="{{ include.class }}"
       {% endif %}
       {% unless use_portrait_wrap %}
-      {% if include.width %}
-        width="{{ include.width }}"
-      {% else %}
-        width="100%"
-      {% endif %}
-      {% if include.height %}
-        height="{{ include.height }}"
-      {% else %}
-        height="auto"
-      {% endif %}
+        {% if include.width %}
+          width="{{ include.width }}"
+        {% else %}
+          width="100%"
+        {% endif %}
+        {% if include.height %}
+          height="{{ include.height }}"
+        {% else %}
+          height="auto"
+        {% endif %}
       {% endunless %}
       {% if include['min-width'] %}
         min-width="{{ include.min-width }}"
@@ -113,7 +113,7 @@
       <p class="text-muted small mb-0">Your browser cannot play this video inline. <a href="{{ video_src }}" download>Download the file</a>.</p>
     </video>
     {% if use_portrait_wrap %}
-    </div>
+      </div>
     {% endif %}
   {% else %}
     <iframe

@@ -10,7 +10,8 @@
   {% assign hit = site.static_files | where: 'path', vpath | first %}
 {% endunless %}
 {% if hit %}
-  {% include video.liquid
+  {%
+    include video.liquid
     path=include.path
     class=include.class
     controls=include.controls
@@ -28,8 +29,8 @@
   <div class="alert alert-secondary" role="note">
     <p class="mb-0">
       <strong>Video not in the site yet.</strong>
-      Add <code>{{ vpath }}</code> to your repo (commit and push for GitHub Pages), then rebuild — the player will appear here automatically.
-      Or open locally after placing the file under that path.
+      Add <code>{{ vpath }}</code> to your repo (commit and push for GitHub Pages), then rebuild — the player will appear here automatically. Or open
+      locally after placing the file under that path.
     </p>
   </div>
 {% endif %}

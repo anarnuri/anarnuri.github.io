@@ -8,7 +8,7 @@ related_publications: false
 
 ## Carpooling App for Rush Hour - Hackathon Winner 🏆
 
-This project was developed for [Transit Hackathon](https://transithack.az/) held in Baku, Azerbaijan. We were thrilled to win the hackathon with our innovative approach to tackling congestion in public transport during rush hours!
+This project was developed for **Transit Hackathon** (Baku, Azerbaijan). We were thrilled to win the hackathon with our innovative approach to tackling congestion in public transport during rush hours!
 
 ### Project Overview
 
@@ -25,7 +25,7 @@ The core of our project was a custom algorithm designed to generate optimized ro
 
 ### Web-Based Visualization
 
-To demonstrate our solution, we implemented a **web-based visualization** accessible [here](https://urbanhack-production.up.railway.app/). This visualization allows users to see the routing algorithm in action. We chose specific destinations for the demo to avoid continuously recalculating distances between random points, as this would consume our limited Google API tokens used for distance calculations.
+To demonstrate our solution, we implemented a **web-based visualization** of the routing algorithm in action. We chose specific destinations for the demo to avoid continuously recalculating distances between random points, as this would consume our limited Google API tokens used for distance calculations.
 
 ### Why This Approach?
 
