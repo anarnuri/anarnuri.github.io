@@ -74,7 +74,7 @@
         - "Fine-tuned YOLOv11 toward ~100% detection accuracy; cut latency by replacing a two-step pipeline with a single optimized model."
         - "Automated myCobot 280 PI capture (~60% less manual work, ~3× labeling throughput) with AWS S3 uploads."
         - "Real-time iPhone QR detection (SwiftUI + CoreML), Docker-ized for deployment."
-        - "Real-time screen/display detection: CLIP ViT-L/14@336 + MLP classifier (documents/screen_Detector codebase), WebSocket streaming, 5-crop TTA, EMA, 3-frame hysteresis — YOLO alone was insufficient for reliable screen boundaries in the wild, so the stack combined vision-language features with temporal smoothing."
+        - "Real-time screen/display classification on iOS: CLIP ViT-L/14@336 + MLP (YOLO insufficient for reliable screen boundaries in the wild); WebSocket streaming, 5-crop TTA, EMA, 3-frame hysteresis for stable live inference."
         - "Training utilities — albumentations, batched GPU feature extraction, stratified splits, disk caching (scikit-learn, PyTorch)."
 
     - title: Mechanical Engineer Intern

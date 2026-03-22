@@ -12,7 +12,7 @@ related_publications: false
     </div>
 </div>
 <div class="caption">
-    The myCobot 280 PI robotic arm automates dataset creation by mimicking human hand movements. Cameras capture images of labels on motorized rewinders, simulating real-world motion. This setup reduces manual effort while ensuring consistency for object detection tasks. A companion iPhone app (shown below) enables real-time model inference in the field.
+    The myCobot 280 PI robotic arm automates dataset creation by mimicking human hand movements. Cameras capture images of labels on motorized rewinders, simulating real-world motion. This setup reduces manual effort while ensuring consistency for object detection tasks. The companion iPhone app (demo below) runs on-device vision in the field—not only <strong>3D QR</strong> authentication, but also a live <strong>screen / display</strong> signal (laptops and monitors), where glare, moiré, and weak box-like boundaries made a standard detector a poor fit.
 </div>
 
 # Automated Dataset Generation, Object Detection, and Mobile Deployment
@@ -28,22 +28,18 @@ related_publications: false
 
 ## Overview
 
-As a **Machine Learning Engineer** at **Zortag**, I automated dataset generation, optimized object detection models, and deployed an **iPhone app for real-time inference**. Zortag’s 3D QR code technology demands high-accuracy authentication, and this project integrated robotics, computer vision, and mobile development to streamline the pipeline.
+As a **Machine Learning Engineer** at **Zortag**, I automated dataset generation, optimized object detection models, and shipped an **iPhone app for real-time inference**. Zortag’s 3D QR stack needs high-accuracy authentication; the same product flow also needed the phone to **know when a laptop or monitor screen** was in view. That second problem sounds simple, but in practice **screens are not “nice” detection targets**: large regions, uneven texture, glare, and moiré meant a **YOLO-style bounding-box model** we tried first kept **missing or jittering** on real hardware.
+
+I addressed that with a **CLIP ViT-L/14@336 image encoder** feeding a **small MLP** for a **stable yes/no screen decision**, with frames streamed over **WebSockets**, **multi-crop inference at test time**, **EMA smoothing**, and a short **hysteresis window** so the UI did not flicker—end-to-end roughly **sub-second** behavior on live video. The robotics and QR pieces are what most people see first; the screen pathway was the parallel engineering thread that made the **whole authentication story** usable outside a lab.
 
 **Key Components**:
 
 - Robotic arm automation for scalable data collection
-- YOLOv8 fine-tuning (99.84% accuracy)
+- YOLOv8 fine-tuning (99.84% accuracy) for QR / label tasks
 - Synthetic data generation
-- **iPhone app** for on-device model inference (_video demo at the beginning_)
+- **iPhone app**: CoreML + SwiftUI, **QR inference** plus the **CLIP + MLP screen head** above (_video demo at the beginning_)
 
 **Note**: Code and datasets are proprietary.
-
----
-
-## Screen and display detection (documents / `screen_Detector`)
-
-Field authentication also required the phone to **recognize when a laptop or monitor screen** was present in the camera view. **YOLO alone was not enough**: screens are large, low-texture regions with glare, moiré, and bezel patterns that do not behave like compact “objects” in COCO-style detection. In the internal **`documents/screen_Detector`** codebase I built a **CLIP ViT-L/14@336 + MLP** pipeline with **WebSocket** streaming from the camera, **5-crop test-time augmentation**, **EMA** smoothing, and **3-frame hysteresis** so predictions stayed stable on live video at roughly **sub-second** latency. The point was not a single flashy metric—it was a **reliable yes/no screen signal** in messy real environments where a bounding-box detector kept misfiring.
 
 ---
 
@@ -61,11 +57,9 @@ Field authentication also required the phone to **recognize when a laptop or mon
 
 ### 3. iPhone App for Inference
 
-- Developed a **native iOS app** to run optimized YOLOv8 models on-device.
-- Features:
-  - Real-time QR code detection via camera
-  - Offline-capable inference (CoreML)
-  - User-friendly UI for field authentication
+- Developed a **native iOS app** to run optimized **YOLOv8** (CoreML) for **3D QR** work on-device.
+- Added **live screen / display detection** for field use: **CLIP + MLP** with streaming, multi-crop evaluation, and temporal smoothing so the app could trust the signal in uneven lighting.
+- **Offline-capable** where the models allow it; **SwiftUI** UI aimed at operators in the field.
 
 ---
 

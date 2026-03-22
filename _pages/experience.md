@@ -56,7 +56,7 @@ Detailed timeline of my professional and research positions. For **portfolio-sty
 - Fine-tuned **YOLOv11**, pushing detection accuracy toward **~100%** and cutting latency by replacing a two-step pipeline with a single optimized model.
 - Automated **myCobot 280 PI** capture workflows (**~60%** less manual work, **~3×** labeling throughput) with automated **AWS S3** uploads for dataset growth.
 - Shipped a real-time **iPhone QR** detector (**SwiftUI** + **CoreML**), containerized with **Docker** for scalable deployment.
-- Built a **real-time screen/display detection** stack in the internal **`documents/screen_Detector`** path: **CLIP ViT-L/14@336** + **MLP** (YOLO was not sufficient for reliable screen boundaries in the wild), **WebSocket** streaming from the phone camera, **5-crop TTA**, **EMA** smoothing, and **3-frame hysteresis** for stable live inference under **~1 s** latency.
+- Shipped **live screen vs. non-screen** classification in the **iOS** product: **CLIP ViT-L/14@336** + **MLP** (after **YOLO** proved unreliable on real displays—glare, moiré, weak box boundaries), with **WebSocket** camera streaming, **5-crop TTA**, **EMA**, and **3-frame hysteresis** for stable **~sub-second** inference.
 - Developed training utilities with **albumentations**, batched GPU feature extraction, stratified splits, and disk-level caching (**scikit-learn**, **PyTorch**) for fast iteration across classifier architectures.
 
 **Related portfolio page:** [Dataset automation with myCobot & iPhone]({{ '/projects/10_project/' | relative_url }}).
