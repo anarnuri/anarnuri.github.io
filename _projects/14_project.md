@@ -91,7 +91,7 @@ Hardware evaluation is **non-negotiable** here: the handoff is exactly where **s
 - **Recovery** after minor slippage — does the chain stall or adapt?
 - **Contact sounds and wrench signatures** (informal) — catching grasps that “look” fine in video but are mechanically marginal.
 
-**Qualitative outcome:** after iteration, **real-robot runs matched the qualitative reliability** we expected from the best sim rollouts — not pixel-identical motion, but **stable task completion** under normal lab disturbance.
+**Honest outcome:** the **sim–real gap** showed up in the usual ways—timing, contact, and calibration did not match rollouts pixel-for-pixel, and some runs needed **light, targeted assistance** (e.g. a nudge or re-grasp) so the robot could **finish the full motion chain**. That assistance was **small relative to doing the task by hand**, but it **was not zero**, and it would be misleading to call every take “effortless.” With iteration, we still reached **useful reliability**: behaviors that **often** matched what we expected from the **best** sim episodes—**stable completion** under normal lab disturbance when conditions aligned—not a claim that sim and hardware were identical or that every run was perfect.
 
 ---
 

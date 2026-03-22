@@ -19,7 +19,7 @@ Detailed timeline of my professional and research positions. For **portfolio-sty
 - Built a **bimanual Rubik’s cube** task: right arm picks, **mid-air handoff** to left arm, place on table; **~2k episodes** via **Isaac Lab** multi-environment / vectorized generation; **π0.5** fine-tuning with **strong sim-to-real** on hardware. **[Project →]({{ '/projects/14_project/' | relative_url }})**
 - Created a **packing-scene** synthetic dataset (similar bimanual platform) with a **deformable bag** in sim — high-difficulty soft / contact-rich manipulation; includes a polished **demo video** on the project page. **[Project →]({{ '/projects/15_project/' | relative_url }})**
 - Implemented **VR teleoperation** for **dual arms** and a **hand gripper** to grip diverse objects and support data collection on real systems (**ROS** where needed). **[Project →]({{ '/projects/16_project/' | relative_url }})**
-- Ongoing: **PhysX** tuning (contact, friction, deformables), **cuRobo**-style planning integration where applicable, **Blender** mesh prep for sim assets, and IL/RL dataset tooling beyond the projects above.
+- Ongoing: **PhysX** tuning (contact, friction, deformables), **cuRobo**-style planning integration where applicable, **Blender** mesh prep for sim assets, and large-scale **imitation / policy-training** dataset tooling beyond the projects above.
 
 ---
 
@@ -43,6 +43,8 @@ Detailed timeline of my professional and research positions. For **portfolio-sty
 - Designed and trained **multi-modal LLM-style models** with **Mixture-of-Experts (MoE)** for path synthesis, built from scratch with a hybrid **ViT + decoder** architecture; **CLIP**-style contrastive learning and Gaussian soft objectives, with ~**15%** accuracy gains over strong baselines at ~**200 ms** inference latency.
 - Improved training efficiency with **Classifier-Free Guidance** and **LoRA** (~**30%** compute reduction); gradient tracking, adaptive clipping, and CLIP-aligned objectives for cross-modal consistency.
 - Developed **β-VAE** and **graph-based VAE** models for structured latent representations supporting multi-modal generation and downstream reasoning.
+- Co-authored **ASME JMD** work on a **3M-sample** planar linkage dataset for ML-driven path synthesis and **ASME JMR** work on **conditional β-VAE** path generative models for mechanism design.
+- Ran systematic studies comparing **curve representations** (Fourier descriptors, wavelets, point coordinates, images) inside unified generative frameworks for four-bar coupler synthesis.
 - Led end-to-end ML work: curation and preprocessing of **12M+** multi-modal samples; distributed training of **sub-1B** transformer models on **SLURM**-managed HPC; scaling experiments on cloud GPUs; **200+** experiments tracked with **PyTorch Lightning**, **Hugging Face**, and **Weights & Biases**.
 
 ---
@@ -54,7 +56,7 @@ Detailed timeline of my professional and research positions. For **portfolio-sty
 - Fine-tuned **YOLOv11**, pushing detection accuracy toward **~100%** and cutting latency by replacing a two-step pipeline with a single optimized model.
 - Automated **myCobot 280 PI** capture workflows (**~60%** less manual work, **~3×** labeling throughput) with automated **AWS S3** uploads for dataset growth.
 - Shipped a real-time **iPhone QR** detector (**SwiftUI** + **CoreML**), containerized with **Docker** for scalable deployment.
-- Built a **real-time screen detection** stack: **CLIP ViT-L/14@336** + **MLP** classifier, **WebSocket** streaming from the phone camera, **5-crop TTA**, **EMA** smoothing, and **3-frame hysteresis** for stable live inference under **~1 s** latency.
+- Built a **real-time screen/display detection** stack in the internal **`documents/screen_Detector`** path: **CLIP ViT-L/14@336** + **MLP** (YOLO was not sufficient for reliable screen boundaries in the wild), **WebSocket** streaming from the phone camera, **5-crop TTA**, **EMA** smoothing, and **3-frame hysteresis** for stable live inference under **~1 s** latency.
 - Developed training utilities with **albumentations**, batched GPU feature extraction, stratified splits, and disk-level caching (**scikit-learn**, **PyTorch**) for fast iteration across classifier architectures.
 
 **Related portfolio page:** [Dataset automation with myCobot & iPhone]({{ '/projects/10_project/' | relative_url }}).

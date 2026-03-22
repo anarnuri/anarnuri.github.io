@@ -36,44 +36,46 @@
       year: Dec 2025 - Present
       location: Las Vegas, NV
       description:
-        - "High-fidelity **Isaac Sim / Isaac Lab (PhysX)** workflows for **URDF/CAD** robots — accurate kinematics, dynamics, and collisions across **dual-arm + gripper** and **mobile** platforms."
-        - "Tuned contact, friction, restitution, and solver settings for stable **contact-rich** and **deformable** manipulation."
-        - "**Vectorized simulation** pipelines for grasps, expert demos, and large-scale **IL/RL** datasets."
-        - "Integrated **cuRobo** for collision-aware planning in PhysX environments."
-        - "Fine-tuned **π0.5** with domain-randomized sim data; **suction end-effectors** and **deformable** objects (cloth, bags)."
-        - "**Blender** CAD/STL prep (STL→OBJ, materials, cleanup) for sim-ready assets."
-        - "**VR teleoperation** to real robots for data collection; **ROS** integration where applicable; VR/desktop control for arms and **hand / parallel grippers**."
+        - "High-fidelity Isaac Sim / Isaac Lab (PhysX) workflows for URDF/CAD robots — accurate kinematics, dynamics, and collisions across dual-arm + gripper and mobile platforms."
+        - "Tuned contact, friction, restitution, and solver settings for stable contact-rich and deformable manipulation."
+        - "Vectorized simulation pipelines for grasps, expert demos, and large-scale imitation / policy-training datasets."
+        - "Integrated cuRobo for collision-aware planning in PhysX environments."
+        - "Fine-tuned π0.5 with domain-randomized sim data; suction end-effectors and deformable objects (cloth, bags)."
+        - "Blender CAD/STL prep (STL→OBJ, materials, cleanup) for sim-ready assets."
+        - "VR teleoperation to real robots for data collection; ROS integration where applicable; VR/desktop control for arms and hand / parallel grippers."
 
     - title: Robotics Engineer Intern
       institution: DL-RL
       year: Apr 2025 - Dec 2025
       location: Brooklyn, NY
       description:
-        - "Built **large-scale synthetic datasets** in **Isaac Sim** for **SO-100** and **Trossen** arms (IK rollouts, domain randomization, multi-sensor); datasets on **Hugging Face** (1k+ monthly downloads)."
-        - "End-to-end **Omniverse** workflows — scene/physics, **USD** stages, CAD/URDF, cameras, **Replicator** auto-labeling."
-        - "Simulation tasks for manipulation, grasping, and pick-and-place before **hardware** deployment."
-        - "Fine-tuned **Gr00t** and **π0** in **PyTorch** on synthetic and real data; closed-loop testing on physical SO-100 with **90–100%** task success on benchmark routines."
+        - "Built large-scale synthetic datasets in Isaac Sim for SO-100 and Trossen arms (IK rollouts, domain randomization, multi-sensor); datasets on Hugging Face (1k+ monthly downloads)."
+        - "End-to-end Omniverse workflows — scene/physics, USD stages, CAD/URDF, cameras, Replicator auto-labeling."
+        - "Simulation tasks for manipulation, grasping, and pick-and-place before hardware deployment."
+        - "Fine-tuned Gr00t and π0 in PyTorch on synthetic and real data; closed-loop testing on physical SO-100 with 90–100% task success on benchmark routines."
 
     - title: Graduate Research Assistant
       institution: Stony Brook University
       year: Sep 2020 - Dec 2025
       location: Stony Brook, NY
       description:
-        - "Designed and trained **multi-modal LLM-style models** with **MoE** for path synthesis (hybrid **ViT + decoder**); **CLIP**-style contrastive learning and Gaussian soft objectives; **~15%** accuracy gains over strong baselines at **~200 ms** inference."
-        - "**Classifier-Free Guidance** and **LoRA** for **~30%** compute reduction; gradient tracking, adaptive clipping, CLIP-aligned objectives."
-        - "**β-VAE** and **graph-based VAE** for structured latent representations."
-        - "End-to-end ML — **12M+** multi-modal samples; **sub-1B** transformers on **SLURM** HPC and cloud GPUs; **200+** experiments with **PyTorch Lightning**, **Hugging Face**, **W&B**."
+        - "Designed and trained multi-modal LLM-style models with Mixture-of-Experts (MoE) for path synthesis, built from scratch with a hybrid ViT + decoder architecture; CLIP-style contrastive learning and Gaussian soft objectives, with ~15% accuracy gains over strong baselines at ~200 ms inference latency."
+        - "Improved training efficiency with Classifier-Free Guidance and LoRA (~30% compute reduction); gradient tracking, adaptive clipping, and CLIP-aligned objectives for cross-modal consistency."
+        - "Developed β-VAE and graph-based VAE models for structured latent representations supporting multi-modal generation and downstream reasoning."
+        - "Co-authored peer-reviewed work on a 3M-sample planar linkage dataset for ML-driven path synthesis (ASME JMD) and on conditional β-VAE path generative models for mechanism design (ASME JMR)."
+        - "Compared multiple curve representations (Fourier descriptors, wavelets, point coordinates, images) inside unified generative frameworks for four-bar coupler synthesis."
+        - "Led end-to-end ML work: curation and preprocessing of 12M+ multi-modal samples; distributed training of sub-1B transformer models on SLURM-managed HPC; scaling experiments on cloud GPUs; 200+ experiments tracked with PyTorch Lightning, Hugging Face, and Weights & Biases."
 
     - title: Computer Vision Engineer
       institution: Zortag
       year: Aug 2024 - Aug 2025
       location: St. James, NY
       description:
-        - "Fine-tuned **YOLOv11** toward **~100%** detection accuracy; cut latency by replacing a two-step pipeline with a single optimized model."
-        - "Automated **myCobot 280 PI** capture (**~60%** less manual work, **~3×** labeling throughput) with **AWS S3** uploads."
-        - "Real-time **iPhone QR** detection (**SwiftUI** + **CoreML**), **Docker**-ized for deployment."
-        - "Real-time **screen detection**: **CLIP ViT-L/14@336** + **MLP**, **WebSocket** streaming, **5-crop TTA**, **EMA**, **3-frame hysteresis**, sub-second live inference."
-        - "Training utilities — **albumentations**, batched GPU feature extraction, stratified splits, disk caching (**scikit-learn**, **PyTorch**)."
+        - "Fine-tuned YOLOv11 toward ~100% detection accuracy; cut latency by replacing a two-step pipeline with a single optimized model."
+        - "Automated myCobot 280 PI capture (~60% less manual work, ~3× labeling throughput) with AWS S3 uploads."
+        - "Real-time iPhone QR detection (SwiftUI + CoreML), Docker-ized for deployment."
+        - "Real-time screen/display detection: CLIP ViT-L/14@336 + MLP classifier (documents/screen_Detector codebase), WebSocket streaming, 5-crop TTA, EMA, 3-frame hysteresis — YOLO alone was insufficient for reliable screen boundaries in the wild, so the stack combined vision-language features with temporal smoothing."
+        - "Training utilities — albumentations, batched GPU feature extraction, stratified splits, disk caching (scikit-learn, PyTorch)."
 
     - title: Mechanical Engineer Intern
       institution: Flower Turbines LLC
@@ -117,3 +119,6 @@
       items:
         - Pasha Hackathon 4.0 Winner
         - TransitHack 2.0 Hackathon Winner
+    - year: 2025
+      items:
+        - "Junior Research Award — International Association for Shell and Spatial Structures (IASC)"

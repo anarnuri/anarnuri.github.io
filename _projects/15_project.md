@@ -13,7 +13,7 @@ related_publications: false
   </div>
 </div>
 <div class="caption">
-  Primary camera: packing scene with a **deformable plastic bag** interacting with the environment and grippers. This is the “hard mode” sibling to rigid-object pipelines — contacts move, slip, and reform in ways cuboid meshes never do.
+  Primary camera: packing scene with a <strong>deformable plastic bag</strong> interacting with the environment and grippers. This is the “hard mode” sibling to rigid-object pipelines — contacts move, slip, and reform in ways cuboid meshes never do.
 </div>
 
 <div class="row mt-3">
@@ -22,7 +22,7 @@ related_publications: false
   </div>
 </div>
 <div class="caption">
-  Alternate viewpoint: same task family, different framing — useful for verifying that behavior is not a camera artifact and for future multi-view training.
+  Alternate viewpoint: same task family, different framing — useful for verifying that behavior is not a <strong>camera artifact</strong> and for future multi-view training.
 </div>
 
 # Packing under deformation: synthetic data when the world is soft

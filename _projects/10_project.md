@@ -41,6 +41,12 @@ As a **Machine Learning Engineer** at **Zortag**, I automated dataset generation
 
 ---
 
+## Screen and display detection (documents / `screen_Detector`)
+
+Field authentication also required the phone to **recognize when a laptop or monitor screen** was present in the camera view. **YOLO alone was not enough**: screens are large, low-texture regions with glare, moiré, and bezel patterns that do not behave like compact “objects” in COCO-style detection. In the internal **`documents/screen_Detector`** codebase I built a **CLIP ViT-L/14@336 + MLP** pipeline with **WebSocket** streaming from the camera, **5-crop test-time augmentation**, **EMA** smoothing, and **3-frame hysteresis** so predictions stayed stable on live video at roughly **sub-second** latency. The point was not a single flashy metric—it was a **reliable yes/no screen signal** in messy real environments where a bounding-box detector kept misfiring.
+
+---
+
 ## Key Contributions
 
 ### 1. Robotic Automation & Dataset Generation
