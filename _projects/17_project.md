@@ -55,13 +55,13 @@ Training drove position error from ~30&nbsp;cm down to **~1.8&nbsp;cm**, then st
 
 When I sat down and tabulated the kernel values across distance, the suspicion looked plausible:
 
-| Distance | broad kernel | mid kernel | ultra-fine kernel |
-|---|---|---|---|
-| 5.0&nbsp;cm | 0.84 (saturated) | 0.46 (peak gradient) | 0.00 (dead) |
-| **1.8&nbsp;cm** | **0.94 (saturated)** | **0.66 (falling)** | **0.0006 (dead)** |
-| 0.5&nbsp;cm | 0.98 (saturated) | 0.90 (saturated) | 0.42 (alive) |
+| Distance        | broad kernel         | mid kernel           | ultra-fine kernel |
+| --------------- | -------------------- | -------------------- | ----------------- |
+| 5.0&nbsp;cm     | 0.84 (saturated)     | 0.46 (peak gradient) | 0.00 (dead)       |
+| **1.8&nbsp;cm** | **0.94 (saturated)** | **0.66 (falling)**   | **0.0006 (dead)** |
+| 0.5&nbsp;cm     | 0.98 (saturated)     | 0.90 (saturated)     | 0.42 (alive)      |
 
-There's a **10× gap between the mid kernel (std=0.05) and the ultra-fine kernel (std=0.005)** with nothing in between. At ~1.8&nbsp;cm — where every run was getting stuck — all three position-tracking terms looked weak: the two broad ones are saturated (gradient ≈ 0), the ultra-fine one isn't awake yet. At the same time, the smoothness penalties were fully ramped. My reading was that the policy was trading the last bit of precision for smoothness, and the equilibrium happened to land in this gap. I can't prove it's the *only* explanation, but the next experiment was consistent with it.
+There's a **10× gap between the mid kernel (std=0.05) and the ultra-fine kernel (std=0.005)** with nothing in between. At ~1.8&nbsp;cm — where every run was getting stuck — all three position-tracking terms looked weak: the two broad ones are saturated (gradient ≈ 0), the ultra-fine one isn't awake yet. At the same time, the smoothness penalties were fully ramped. My reading was that the policy was trading the last bit of precision for smoothness, and the equilibrium happened to land in this gap. I can't prove it's the _only_ explanation, but the next experiment was consistent with it.
 
 ### Threshold penalties: what broke the plateau (at least once)
 
@@ -83,14 +83,14 @@ I added a symmetric threshold penalty for orientation, calibrated so the per-ste
 
 Tightening either threshold past a point seemed to come at the other axis's expense:
 
-| Variant | pos_err | orn_err | notes |
-|---|---|---|---|
-| **10D** | 12.0&nbsp;mm | **0.87°** | best orientation precision |
-| **10F** | **4.5&nbsp;mm** | 4.27° | best position precision |
-| 10I | 6.0&nbsp;mm | 3.27° | first stable run with active orn pressure |
-| 10N | 15.3&nbsp;mm | 1.38° | soft-kernel-driven regime, longer training |
+| Variant | pos_err         | orn_err   | notes                                      |
+| ------- | --------------- | --------- | ------------------------------------------ |
+| **10D** | 12.0&nbsp;mm    | **0.87°** | best orientation precision                 |
+| **10F** | **4.5&nbsp;mm** | 4.27°     | best position precision                    |
+| 10I     | 6.0&nbsp;mm     | 3.27°     | first stable run with active orn pressure  |
+| 10N     | 15.3&nbsp;mm    | 1.38°     | soft-kernel-driven regime, longer training |
 
-Across the active frontier I roughly traded ~1&nbsp;mm of position for ~0.5° of orientation. Getting both 5&nbsp;mm *and* ~1° in the same run would have needed an orientation weight that destabilized training (see below). Whether that's a fundamental property of the task or just of this reward shape, I can't say from one campaign.
+Across the active frontier I roughly traded ~1&nbsp;mm of position for ~0.5° of orientation. Getting both 5&nbsp;mm _and_ ~1° in the same run would have needed an orientation weight that destabilized training (see below). Whether that's a fundamental property of the task or just of this reward shape, I can't say from one campaign.
 
 Two runs (Exp 10G / 10H) tried larger orientation weights from a cold start. Both collapsed mid-training: value function loss diverged, the policy never recovered. The same target weights were stable when I reached them via a staggered curriculum — start at a weight the policy could handle, let it find an attractor, then bump. My takeaway here is narrow: in this task, the weight value alone wasn't enough to predict stability — the starting condition relative to it mattered at least as much. Whether that generalizes to other reward stacks I haven't tested.
 
@@ -98,7 +98,7 @@ Two runs (Exp 10G / 10H) tried larger orientation weights from a cold start. Bot
 
 ## Things that surprised me along the way
 
-Four observations from this campaign that I'd at least *check for* on a similar task next time — not necessarily generalizable laws:
+Four observations from this campaign that I'd at least _check for_ on a similar task next time — not necessarily generalizable laws:
 
 - **Penalising joint velocity at the actual saturation layer worked better than clamping the EE rate.** I first tried capping `rot_scale` at the action layer, which sounded tidier, but the IK Jacobian can amplify small EE deltas into large joint deltas near wrist singularities, so the cap didn't actually bound joint velocity. A soft barrier penalty in the 80%→100% band of the URDF velocity cap shifted the saturating joint from wrist to elbow (which has more effort capacity) and dropped the bad-episode fraction from ~33% to ~10%. n=1.
 
@@ -131,8 +131,8 @@ The trained reach policy in this writeup is the simplest building block. The in-
 Hedged on purpose — these are observations on **one task** with **one reward stack family**, not laws.
 
 - **Reward shape moved the needle far more than PPO hyperparameters did, here.** I didn't see a hyperparameter change that came close to the impact of (a) adding a non-saturating term above a threshold, or (b) fixing the suspension dynamics. That ordering might be specific to this task.
-- **The plateau in this campaign looked like a gradient gap.** The 18&nbsp;mm floor across multiple variants matched where my kernel-saturation table predicted the gradient would be weakest, and a term that filled the gap moved the floor. I don't know whether *every* plateau is a gradient gap — that's a hypothesis worth checking next time, not a conclusion.
-- **A non-saturating term above a threshold was the only thing I found that pulled the policy through the last few mm.** Tanh kernels by construction lose gradient near zero. If precision matters, I'd start by checking whether the reward has *any* term whose gradient stays alive near the goal.
+- **The plateau in this campaign looked like a gradient gap.** The 18&nbsp;mm floor across multiple variants matched where my kernel-saturation table predicted the gradient would be weakest, and a term that filled the gap moved the floor. I don't know whether _every_ plateau is a gradient gap — that's a hypothesis worth checking next time, not a conclusion.
+- **A non-saturating term above a threshold was the only thing I found that pulled the policy through the last few mm.** Tanh kernels by construction lose gradient near zero. If precision matters, I'd start by checking whether the reward has _any_ term whose gradient stays alive near the goal.
 - **A sim-side fix beat a reward iteration on this run.** 7 points of inference success from one stiffness/damping change is a lot. I take that as a reminder to scan the simulation for "is this dynamics actually what I want?" before assuming the policy is the bottleneck. Not a universal claim that sim always wins.
 - **A running what / why / result / verdict log saved me from running the same experiment twice.** This is more about process than RL, but it's the thing I'd lift wholesale to any future campaign of this kind.
 
