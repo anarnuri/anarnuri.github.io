@@ -88,6 +88,39 @@ jobs:
         run: |
           npm install -g purgecss
           purgecss -c purgecss.config.js
+      - name: Encrypt private project pages 🔐
+        env:
+          STATICRYPT_PASSWORD: ${{ secrets.STATICRYPT_PASSWORD }}
+        run: |
+          if [ -z "$STATICRYPT_PASSWORD" ]; then
+            echo "::error::STATICRYPT_PASSWORD secret is not set. Add it under Settings → Secrets and variables → Actions."
+            exit 1
+          fi
+          npm install -g staticrypt
+          # Pages to encrypt — Richtech work (project deep-dives only).
+          # Public site keeps Experience / About bullets visible; full
+          # project pages are gated.
+          for proj in 13 14 15 16 17; do
+            src="_site/projects/${proj}_project/index.html"
+            if [ ! -f "$src" ]; then
+              echo "::warning::Expected $src not found, skipping."
+              continue
+            fi
+            tmpdir="$(mktemp -d)"
+            staticrypt "$src" \
+              -p "$STATICRYPT_PASSWORD" \
+              -d "$tmpdir" \
+              --short \
+              --template-title "Protected page — anarnuri.github.io" \
+              --template-instructions "This project page is private. Email anar.nurizada@gmail.com to request the password." \
+              --template-button "Unlock" \
+              --template-color-primary "#1a73e8" \
+              --template-color-secondary "#f5f5f5" \
+              --remember 7
+            mv "$tmpdir/index.html" "$src"
+            rm -rf "$tmpdir"
+            echo "Encrypted: $src"
+          done
       - name: Deploy 🚀
         if: github.event_name != 'pull_request'
         uses: JamesIves/github-pages-deploy-action@v4

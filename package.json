@@ -1,6 +1,7 @@
 {
   "devDependencies": {
     "@shopify/prettier-plugin-liquid": "^1.10.0",
-    "prettier": "3.1.1"
+    "prettier": "3.1.1",
+    "staticrypt": "^3.5.4"
   }
 }
