@@ -100,7 +100,7 @@ jobs:
           # Pages to encrypt — Richtech work (project deep-dives only).
           # Public site keeps Experience / About bullets visible; full
           # project pages are gated.
-          for proj in 13 14 15 16 17; do
+          for proj in 13 14 15 16 17 18 19; do
             src="_site/projects/${proj}_project/index.html"
             if [ ! -f "$src" ]; then
               echo "::warning::Expected $src not found, skipping."
