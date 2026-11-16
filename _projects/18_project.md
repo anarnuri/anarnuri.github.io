@@ -15,7 +15,7 @@ related_publications: false
   </div>
 </div>
 <div class="caption">
-  Closed-loop rollout of my best π0.5 checkpoint (full fine-tune, third dataset generation) in the simulated packing cell, 8× speed. The policy sees two cameras and the joint state, outputs 32-step joint-target chunks plus a suction command, and clears all 12 gifts in 14 attempts. Nothing is scripted. Every motion comes from the policy.
+  Closed-loop rollout of my best π0.5 checkpoint (full fine-tune, third dataset generation) in the simulated packing cell, 8× speed. The policy sees two cameras and the joint state, outputs 32-step joint-target chunks plus a suction command, and clears all 12 gifts in 12 attempts, with no missed picks, in about 6 minutes of sim time. Nothing is scripted. Every motion comes from the policy.
 </div>
 
 # Gift-packing VLA
@@ -246,7 +246,7 @@ To check whether the remaining failures are a model problem or a data problem, I
   </div>
 </div>
 <div class="caption">
-  GR00T N1.7 (step 50k) on a standard tray, 8× speed: 12 of 12 gifts in 12 attempts.
+  GR00T N1.7 (step 50k), 8× speed, on the same tray and seed as the π0.5 video at the top of the page: 12 of 12 gifts in 12 attempts, in about 8.5 minutes of sim time versus about 6 for π0.5.
 </div>
 
 | Paired standard trays (first 11) | π0.5, gen-3 mix 10k | GR00T N1.7, 50k |
